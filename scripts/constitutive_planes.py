@@ -158,14 +158,17 @@ def main() -> int:
             [
                 "# Constitutive product on discrete planes",
                 "",
-                r"Fourier: \(q=-k\nabla T\). Ohm: \(J=\sigma E=-\sigma\nabla V\).",
+                r"Fourier: $q=-k\nabla T$. Ohm: $J=\sigma E=-\sigma\nabla V$.",
                 "",
-                r"On a 1D grid the gradient is convolution with \(d\). With constant \(\kappa\)",
+                r"On a 1D grid the gradient is convolution with $d$. With constant $\kappa$",
                 r"and a circular embedding the DFT gives",
-                r"\(F\{\mathrm{flux}\}_k=-\kappa H_k F\{u\}_k\).",
                 "",
-                r"The cell line carries fields \(\varphi^E\), \(\varphi^S\), \(\varphi^H\) and the",
-                r"base index. Each admits the same flux form. The maps \(f\) and \(g\) build",
+                "$$",
+                r"F\{\mathrm{flux}\}_k=-\kappa H_k F\{u\}_k.",
+                "$$",
+                "",
+                r"The cell line carries fields $\varphi^E$, $\varphi^S$, $\varphi^H$ and the",
+                r"base index. Each admits the same flux form. The maps $f$ and $g$ build",
                 r"the potentials; they are not linear Ohm/Fourier laws.",
                 "",
                 "Figures: `figures/constitutive/`.",
@@ -173,6 +176,7 @@ def main() -> int:
             ]
         )
     )
+
     print("wrote", RES / "constitutive_planes.json")
     return 0
 

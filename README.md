@@ -17,43 +17,49 @@ I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, sph
 
 ## Maps
 
-**Normal \(f\)** (classical Collatz; global convergence to 4→2→1 remains a conjecture on \(\mathbb{Z}^+\)):
+**Normal $f$** (classical Collatz; global convergence to $4\to 2\to 1$ remains a conjecture on $\mathbb{Z}^+$):
 
-\[
-f(n)=\begin{cases} n/2 & n\text{ even}\\ 3n+1 & n\text{ odd}\end{cases}
-\]
+$$
+f(n)=\begin{cases}
+n/2 & \text{if }n\text{ is even}\\
+3n+1 & \text{if }n\text{ is odd}
+\end{cases}
+$$
 
-**Inverted \(g\)** (branches swapped):
+**Inverted $g$** (branches swapped):
 
-\[
-g(n)=\begin{cases} 3n+1 & n\text{ even}\\ n/2 & n\text{ odd}\end{cases}
-\]
+$$
+g(n)=\begin{cases}
+3n+1 & \text{if }n\text{ is even}\\
+n/2 & \text{if }n\text{ is odd}
+\end{cases}
+$$
 
-\(g\) is **not** claimed to send every orbit to \(+\infty\). Cycles exist (for example \(0\leftrightarrow 1\) and \(6\to 19\to 9\to 4\to 13\to 6\)).
+$g$ is **not** claimed to send every orbit to $+\infty$. Cycles exist (for example $0\leftrightarrow 1$ and $6\to 19\to 9\to 4\to 13\to 6$).
 
 ---
 
 ## Main observations
 
-### Exploration under \(g\) versus \(f\)
+### Exploration under $g$ versus $f$
 
-On \(\mathbb{Z}\), on \(\mathbb{Z}/N\mathbb{Z}\), on a discrete hyperbolic tree (value + level), and on a product of path monitors, \(g\) tends to explore more of the state space than \(f\): less concentration on 1 on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts.
+On $\mathbb{Z}$, on $\mathbb{Z}/N\mathbb{Z}$, on a discrete hyperbolic tree (value + level), and on a product of path monitors, $g$ tends to explore more of the state space than $f$: less concentration on $1$ on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts.
 
 ### Markov structure
 
-\[
+$$
 X_{n+1}=g(X_n)
-\]
+$$
 
-with probability one. The future depends only on the present state. Successive parities are not independent fair coins: under \(g\), an even integer is always followed by an odd one because \(3n+1\) is odd.
+with probability one. The future depends only on the present state. Successive parities are not independent fair coins: under $g$, an even integer is always followed by an odd one because $3n+1$ is odd.
 
 ### Even half-integers
 
-If \(x_0=2k+\frac12\) for integer \(k\ge 0\) and the rule “floor even \(\to 3x+1\)” is used, the form is preserved and the sequence is strictly increasing, so \(x_n\to+\infty\). This is a theorem for that family only.
+If $x_0=2k+\frac{1}{2}$ for integer $k\ge 0$ and the rule “floor even $\to 3x+1$” is used, the form is preserved and the sequence is strictly increasing, so $x_n\to+\infty$. This is a theorem for that family only.
 
 ### Spherical model
 
-On \(\mathbb{Z}/N\mathbb{Z}\) every orbit stays in a finite set. There is no analogue of divergence to infinity. Attraction toward the class of 1 still makes sense and is stronger under \(f\) than under \(g\) in the runs recorded here.
+On $\mathbb{Z}/N\mathbb{Z}$ every orbit stays in a finite set. There is no analogue of divergence to infinity. Attraction toward the class of $1$ still makes sense and is stronger under $f$ than under $g$ in the runs recorded here.
 
 ---
 
@@ -61,16 +67,16 @@ On \(\mathbb{Z}/N\mathbb{Z}\) every orbit stays in a finite set. There is no ana
 
 | Model | Space | Notes |
 |-------|--------|--------|
-| Euclidean | \(\mathbb{Z}^+\) | classical arithmetic; \(n\to\infty\) possible |
-| Spherical | \(\mathbb{Z}/N\mathbb{Z}\) | compact; no infinity |
-| Hyperbolic | value + tree level | capacity grows like \(2^{\mathrm{level}}\) |
-| Product | \((x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})\) | \(S\) remains in \(\{0,\ldots,N-1\}\) |
+| Euclidean | $\mathbb{Z}^+$ | classical arithmetic; $n\to\infty$ possible |
+| Spherical | $\mathbb{Z}/N\mathbb{Z}$ | compact; no infinity |
+| Hyperbolic | value + tree level | capacity grows like $2^{\mathrm{level}}$ |
+| Product | $(x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})$ | $S$ remains in $\{0,\ldots,N-1\}$ |
 
 ---
 
 ## Fourier / QFT (simulated)
 
-Orbit signals (parity or \(\log(1+X_t)\)) are transformed with the classical DFT and recovered with the inverse DFT. A unitary QFT matrix of size \(2^n\) is applied to a normalised amplitude vector (classical linear algebra). Separation between the spectral measures of \(f\) and \(g\) is summarised by a score in \([0,1]\). A weight \(w(k;\theta)=\mathrm{softmax}(\theta)\) can be fitted to emphasise bins where the two measures differ.
+Orbit signals (parity or $\log(1+X_t)$) are transformed with the classical DFT and recovered with the inverse DFT. A unitary QFT matrix of size $2^n$ is applied to a normalised amplitude vector (classical linear algebra). Separation between the spectral measures of $f$ and $g$ is summarised by a score in $[0,1]$. A weight $w(k;\theta)=\mathrm{softmax}(\theta)$ can be fitted to emphasise bins where the two measures differ.
 
 This is not a claim about quantum hardware.
 
@@ -84,17 +90,18 @@ python scripts/fourier_qft_crack.py
 
 The linear constitutive forms of heat conduction and electrical conduction,
 
-\[
+$$
 q=-k\nabla T,\qquad J=\sigma E=-\sigma\nabla V,
-\]
+$$
 
-share the same discrete skeleton on a 1D grid: \(\mathrm{flux}=-\kappa\,(d*u)\). With constant \(\kappa\) and a circular embedding the DFT factors this as
+share the same discrete skeleton on a 1D grid: $\mathrm{flux}=-\kappa\,(d*u)$. With constant $\kappa$ and a circular embedding the DFT factors this as
 
-\[
-F\{\mathrm{flux}\}_k=-\kappa\,H_k\,F\{u\}_k,\qquad H_k=\frac{e^{2\pi i k/N}-1}{\Delta x}.
-\]
+$$
+F\{\mathrm{flux}\}_k=-\kappa\,H_k\,F\{u\}_k,\qquad
+H_k=\frac{e^{2\pi i k/N}-1}{\Delta x}.
+$$
 
-Orbits under \(f\) and \(g\) define scalar fields on the cell line (Euclidean log, modular value, level-weighted log, and the cell index). The same flux law applies to each field. The maps themselves are not claimed to be Ohm or Fourier laws. If \(\kappa\) depends on parity, the product becomes Hadamard in space and is no longer a single factor \(H_k\) in frequency.
+Orbits under $f$ and $g$ define scalar fields on the cell line (Euclidean log, modular value, level-weighted log, and the cell index). The same flux law applies to each field. The maps themselves are not claimed to be Ohm or Fourier laws. If $\kappa$ depends on parity, the product becomes Hadamard in space and is no longer a single factor $H_k$ in frequency.
 
 ```bash
 python scripts/constitutive_planes.py
