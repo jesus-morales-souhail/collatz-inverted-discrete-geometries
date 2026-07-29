@@ -58,7 +58,7 @@ def log_signal(n0: int, steps: int, inverted: bool) -> np.ndarray:
     return np.log1p(orbit_int(n0, steps, inverted))
 
 
-def ensemble_parity_matrix(
+def parity_matrix(
     seeds: List[int], steps: int, inverted: bool
 ) -> np.ndarray:
     """Rows = seeds, cols = time (parity)."""
@@ -68,8 +68,8 @@ def ensemble_parity_matrix(
 def mean_parity_spectrum(
     seeds: List[int], steps: int, inverted: bool
 ) -> np.ndarray:
-    """Mean |DFT| of parity rows (power spectrum)."""
-    M = ensemble_parity_matrix(seeds, steps, inverted)
+    """Mean power spectrum of parity rows."""
+    M = parity_matrix(seeds, steps, inverted)
     # zero-mean each row
     M = M - M.mean(axis=1, keepdims=True)
     F = np.fft.rfft(M, axis=1)
@@ -285,7 +285,7 @@ def analyze_crack(
         crack_probability=p_crack,
         notes=(
             "crack_probability is a spectral separability score in [0,1], "
-            "not a market edge and not a proof of divergence."
+            "Spectral separability score in [0,1]; not a proof of divergence."
         ),
     )
     extras = {

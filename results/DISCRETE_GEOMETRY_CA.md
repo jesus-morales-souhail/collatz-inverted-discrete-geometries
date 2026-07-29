@@ -1,21 +1,21 @@
-# Geometrías discretas + Collatz + CA
+# Discrete geometries and elementary cellular automata
 
-## Principio
-No se define par/impar en una variedad continua sin discretizar.
+## Principle
 
-## Modelos
-- E: Z+
-- S: Z/NZ
-- H: (valor, nivel árbol)
-- 4D: (E, S, H_val, H_level)
-- CA: reglas 30, 90, 110, 184
+Parity is defined on integers (or on a stated discretisation). The models below imitate Euclidean, spherical and hyperbolic settings without placing parity on a continuum by hand.
 
-## Conclusiones
-- Euclidiano Z: f empuja a 4-2-1 (conjetura); g mezcla divergencia y ciclos (~no siempre ∞).
-- Esférico Z/N: no existe ∞; f visita 1 más que g; g tiene más exploración en el anillo.
-- Hiperbólico: g sube de nivel (capacidad exp) cuando el valor crece; f baja de nivel hacia el atractor.
-- Producto 4D: modo f → componentes E/H acotadas hacia 1; modo g → E/H crecen; S siempre finita.
-- CA elementales: Markov espacial local; misma lógica que Collatz (dependencia del presente).
-- Grieta: paridad Collatz = cinta temporal; CA = cinta espacial; juntas muestran dependencia ≠ independencia.
+## Models
 
-Figuras: `/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/discrete_geo`
+- Euclidean: \(\mathbb{Z}^+\).  
+- Spherical: \(\mathbb{Z}/N\mathbb{Z}\) (no infinity).  
+- Hyperbolic: pair (value, tree level).  
+- Product: \((x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})\).  
+- Elementary cellular automata: Wolfram rules 30, 90, 110, 184.
+
+## Observations
+
+Under \(f\), orbits concentrate more on 1 (or short cycles) than under \(g\), especially on the modular ring. Under \(g\), non-compact components admit larger growth. The spherical coordinate in the product remains bounded by construction.
+
+Elementary cellular automata share the same local Markov idea: the next bit depends only on a finite present neighbourhood.
+
+Figures: `figures/discrete_geo/`.

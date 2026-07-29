@@ -2,79 +2,81 @@
 
 Jesús Morales Souhail  
 [ORCID 0009-0000-7637-1818](https://orcid.org/0009-0000-7637-1818) · [github.com/jesus-morales-souhail](https://github.com/jesus-morales-souhail)  
-July 2026 · independent work · not peer reviewed
+July 2026 · independent notes · not peer reviewed
 
-Two arithmetic maps, measured on **discrete** models that imitate Euclidean, spherical, and hyperbolic geometry—and on their product—without pretending that parity is well-defined on a smooth manifold without discretization.
+I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, spherical and hyperbolic geometry. Parity is a property of integers. It is not assumed to sit on a smooth manifold without an explicit discretisation.
 
 | | |
 |:--|:--|
-| [`START_HERE.md`](START_HERE.md) | how to read this folder |
-| [`BOUNDARY.md`](BOUNDARY.md) | what this repo is not allowed to claim |
-| [`docs/CLAIMS.md`](docs/CLAIMS.md) | short list of claims with status |
-| [`results/CONCLUSION_CANONICA.md`](results/CONCLUSION_CANONICA.md) | one-sentence lab conclusion |
+| [`START_HERE.md`](START_HERE.md) | reading order |
+| [`BOUNDARY.md`](BOUNDARY.md) | limits of the claims |
+| [`docs/CLAIMS.md`](docs/CLAIMS.md) | claim table |
+| [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion |
 
 ---
 
-## The two equations
+## Maps
 
-**Normal \(f\)** (classical Collatz — attractor 4→2→1 is a *conjecture* on \(\mathbb{Z}^+\)):
+**Normal \(f\)** (classical Collatz; global convergence to 4→2→1 remains a conjecture on \(\mathbb{Z}^+\)):
 
 \[
 f(n)=\begin{cases} n/2 & n\text{ even}\\ 3n+1 & n\text{ odd}\end{cases}
 \]
 
-**Inverted \(g\)** (parity-swapped — *more exploration*; **not** always \(\to\infty\)):
+**Inverted \(g\)** (branches swapped):
 
 \[
 g(n)=\begin{cases} 3n+1 & n\text{ even}\\ n/2 & n\text{ odd}\end{cases}
 \]
 
----
-
-## What we measured (and stand behind)
-
-### 1. Geometric exploration crack (empirical, multi-model)
-
-In discrete Euclidean \(\mathbb{Z}\), spherical \(\mathbb{Z}/N\mathbb{Z}\), hyperbolic (value + tree level), and a product monitor \((E,S,H)\):
-
-- \(f\) pushes toward the finite attractor pattern (4-2-1 / visit 1).
-- \(g\) explores more: longer paths in non-compact monitors, less attraction to 1 on the ring, higher work \(\int F\,ds\) when growth dominates.
-
-**Canonical one-liner:**  
-*The inverted map explores more than the normal map across the discrete geometry models we defined—not only in crypto-style samples and not only in one plane.*
-
-### 2. Markov dependence (proved by construction + checked)
-
-\[
-X_{n+1}=g(X_n)\quad\text{with probability }1
-\]
-
-\[
-P(X_{n+1}\mid X_n,\ldots,X_0)=P(X_{n+1}\mid X_n)
-\]
-
-If steps were fully independent of the present, there would be no dynamical rule and no trajectories. Successive parities under \(g\) are **not** i.i.d. coins (e.g. even \(\mapsto\) always odd via \(3n+1\)).
-
-### 3. Theorem: even half-integers under a floor-parity inverted rule
-
-For \(x_0=2k+\frac12\) (\(k\ge 0\)) and “floor even \(\to 3x+1\)”: the form is preserved and \(x_{n+1}>x_n\), hence \(x_n\to+\infty\).
-
-This is a **family theorem**, not a claim about all integer orbits of \(g\).
-
-### 4. Spherical discrete model kills “infinity”
-
-On \(\mathbb{Z}/N\mathbb{Z}\) every orbit stays in a finite set. The analogue of “\(\to 1\)” still makes sense; the analogue of “\(\to\infty\)” does not.
+\(g\) is **not** claimed to send every orbit to \(+\infty\). Cycles exist (for example \(0\leftrightarrow 1\) and \(6\to 19\to 9\to 4\to 13\to 6\)).
 
 ---
 
-## Discrete geometries (no continuous parity cheat)
+## Main observations
 
-| Model | Space | Infinity? | Role of \(f\) / \(g\) |
-|-------|--------|-----------|----------------------|
-| Euclidean | \(\mathbb{Z}^+\) | \(n\to\infty\) possible | Classical arithmetic |
-| Spherical | \(\mathbb{Z}/N\mathbb{Z}\) | **No** | Compact attractor statistics |
-| Hyperbolic | (value, tree level) | value + capacity \(2^{\mathrm{level}}\) | Growth aligns with expansion under \(g\) |
-| 4D product | \((x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})\) | \(S\) always bounded | Mode \(f\to 1\) vs mode \(g\to\) escape on non-compact coords |
+### Exploration under \(g\) versus \(f\)
+
+On \(\mathbb{Z}\), on \(\mathbb{Z}/N\mathbb{Z}\), on a discrete hyperbolic tree (value + level), and on a product of path monitors, \(g\) tends to explore more of the state space than \(f\): less concentration on 1 on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts.
+
+### Markov structure
+
+\[
+X_{n+1}=g(X_n)
+\]
+
+with probability one. The future depends only on the present state. Successive parities are not independent fair coins: under \(g\), an even integer is always followed by an odd one because \(3n+1\) is odd.
+
+### Even half-integers
+
+If \(x_0=2k+\frac12\) for integer \(k\ge 0\) and the rule “floor even \(\to 3x+1\)” is used, the form is preserved and the sequence is strictly increasing, so \(x_n\to+\infty\). This is a theorem for that family only.
+
+### Spherical model
+
+On \(\mathbb{Z}/N\mathbb{Z}\) every orbit stays in a finite set. There is no analogue of divergence to infinity. Attraction toward the class of 1 still makes sense and is stronger under \(f\) than under \(g\) in the runs recorded here.
+
+---
+
+## Discrete models
+
+| Model | Space | Notes |
+|-------|--------|--------|
+| Euclidean | \(\mathbb{Z}^+\) | classical arithmetic; \(n\to\infty\) possible |
+| Spherical | \(\mathbb{Z}/N\mathbb{Z}\) | compact; no infinity |
+| Hyperbolic | value + tree level | capacity grows like \(2^{\mathrm{level}}\) |
+| Product | \((x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})\) | \(S\) remains in \(\{0,\ldots,N-1\}\) |
+
+---
+
+## Fourier / QFT (simulated)
+
+Orbit signals (parity or \(\log(1+X_t)\)) are transformed with the classical DFT and recovered with the inverse DFT. A unitary QFT matrix of size \(2^n\) is applied to a normalised amplitude vector (classical linear algebra). Separation between the spectral measures of \(f\) and \(g\) is summarised by a score in \([0,1]\). A weight \(w(k;\theta)=\mathrm{softmax}(\theta)\) can be fitted to emphasise bins where the two measures differ.
+
+This is not a claim about quantum hardware.
+
+```bash
+python scripts/fourier_qft_crack.py
+```
 
 ---
 
@@ -89,40 +91,27 @@ python tests/test_core.py
 python scripts/run_all_checks.py
 ```
 
-Optional figure scripts (matplotlib):
+Figure generators (optional):
 
 ```bash
 python scripts/markov_dependent.py
 python scripts/discrete_geometry_ca.py
 python scripts/two_maps_euclidean_spherical.py
-python scripts/fourier_qft_crack.py   # DFT → iDFT → QFT → crack probability
+python scripts/fourier_qft_crack.py
 ```
-
-### Fourier / QFT crack channel
-
-Classical **DFT** and **inverse DFT** (numerical roundtrip ~1e-15), then a **simulated unitary QFT** on amplitudes encoded from orbit signals. Separation of spectral measures of \(f\) vs \(g\) yields a `crack_probability` score; a variational weight \(w(k;\theta)=\mathrm{softmax}(\theta)\) maximizes \(\mathbb{E}_w[|p_g-p_f|]\).
-
-See `results/FOURIER_QFT_CRACK.md` and `BOUNDARY.md` (no hardware quantum claim).
 
 ---
 
 ## Layout
 
 ```
-src/           maps, Markov, discrete geometries, even-½ theorem
-scripts/       reproducible checks and figure generators
-tests/         minimal claim tests
-results/       JSON/MD snapshots of runs
-figures/       binary, train, Markov, discrete_geo, riemann monitors
-docs/          claims table
-BOUNDARY.md    claim fence
+src/        maps, Markov checks, discrete geometries, Fourier/QFT helpers
+scripts/    reproducible numerics and figures
+tests/      small tests of the maps and theorems
+results/    JSON and short notes from runs
+figures/    plots and a short train animation
+docs/       claim table
 ```
-
----
-
-## What is *not* in this repo
-
-Trading bots, broker code, or profitability claims. Those were lab-only and are out of scope for a mathematics-first public package.
 
 ---
 

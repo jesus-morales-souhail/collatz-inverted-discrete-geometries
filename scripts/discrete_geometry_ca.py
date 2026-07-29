@@ -7,7 +7,7 @@ sys.path.insert(0, str(ROOT))
 Modelos DISCRETOS que imitan cada geometría + Collatz f/g + CA elementales.
 
 No se pega paridad en una variedad continua sin discretizar.
-Aquí todo es discreto y medible (espíritu lab Morales-Souhail: celdas, no free lunch).
+All constructions are discrete; parity is never assumed on a continuum without a grid.
 
 Ecuaciones:
   f (normal):     par → n/2,      impar → 3n+1
@@ -562,7 +562,7 @@ def plot_poster(eu, sp, hy, pr):
     ax.text(
         5, 1.2,
         "Enlace lab Morales-Souhail (github): celdas medibles, dependencia local,\n"
-        "sin free lunch — aquí: sin pegar paridad continua sin discretizar.",
+        "Parity is only used after discretisation.",
         ha="center", fontsize=8, style="italic", color="#495057",
     )
     fig.tight_layout()
@@ -616,7 +616,7 @@ def main() -> int:
         "hyperbolic": hy,
         "product_4d": pr,
         "wolfram_rules_shown": [30, 90, 110, 184],
-        "github_link": "https://github.com/jesus-morales-souhail — cell/measurable philosophy",
+        "related": "https://github.com/jesus-morales-souhail",
         "conclusions_es": [
             "Euclidiano Z: f empuja a 4-2-1 (conjetura); g mezcla divergencia y ciclos (~no siempre ∞).",
             "Esférico Z/N: no existe ∞; f visita 1 más que g; g tiene más exploración en el anillo.",

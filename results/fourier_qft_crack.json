@@ -11,7 +11,7 @@
     "qft_fidelity_f": 1.0000000000000244,
     "qft_fidelity_g": 1.000000000000032,
     "crack_probability": 0.6038456389953408,
-    "notes": "crack_probability is a spectral separability score in [0,1], not a market edge and not a proof of divergence."
+    "notes": "Spectral separability score in [0,1]; not a proof of divergence."
   },
   "variational": {
     "J_final": 0.057899054934546015,

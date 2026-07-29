@@ -1,33 +1,29 @@
-# Boundary — what this repository does **not** claim
+# Limits of the claims
 
-This note is the claim fence (same spirit as other public repos under this account).
+## In scope
 
-## Allowed
+- Definitions of \(f\) (normal Collatz) and \(g\) (parity-swapped map) on integers.
+- Discrete spaces that imitate Euclidean, spherical and hyperbolic geometry.
+- Empirical comparisons of orbits under \(f\) and \(g\) (growth, path lengths, spectral separation).
+- The Markov property for the deterministic iteration \(X_{n+1}=g(X_n)\).
+- A theorem for the family \(x_0=2k+\frac12\) under the floor-parity rule \(3x+1\) when the integer part is even.
+- Pedagogy: binary plots, elementary cellular automata, train diagrams.
 
-- Definitions of the two maps \(f\) (normal) and \(g\) (inverted) on integers.
-- Discrete models that *imitate* Euclidean, spherical, and hyperbolic settings.
-- Empirical measurements: growth fractions, path monitors, Markov uniqueness of successors.
-- A **theorem** for the real family \(x_0 = 2k+\tfrac12\) under floor-parity inverted rule \(3x+1\).
-- Pedagogical figures (binary tapes, train metaphor, cellular automata).
+## Out of scope
 
-## Not allowed / not claimed
+- A proof of the classical Collatz conjecture on all of \(\mathbb{Z}^+\).
+- A claim that every inverted integer orbit diverges (counterexamples: finite cycles).
+- A canonical notion of parity on a smooth Riemannian manifold without discretisation.
+- Deriving arithmetic divergence from Euclid’s postulates alone.
+- Any financial application or investment claim.
+- Quantum computational advantage; the QFT used here is a classical unitary matrix of size \(2^n\).
 
-- A proof of the classical Collatz conjecture on \(\mathbb{Z}^+\).
-- A proof that **every** inverted integer orbit diverges to \(+\infty\) (false: cycles exist, e.g. \(0\leftrightarrow 1\), \(6\to 19\to 9\to 4\to 13\to 6\)).
-- That continuous Riemannian manifolds carry a *canonical* parity without discretization.
-- That Euclidean postulates alone prove arithmetic divergence.
-- Trading profitability, market edge, or financial advice (any trading lab code is **out of scope** here).
-- That multi-geometry “exploration” equals a physical force law of nature.
-- That a **simulated** Quantum Fourier Transform (unitary DFT on a classical computer)
-  implies hardware quantum advantage, or that `crack_probability` is a physical
-  measurement probability on a real QPU.
+## Short table
 
-## Language discipline
-
-| Phrase | Status |
-|--------|--------|
-| Normal map tends to 4-2-1 for tested ranges | Empirical / open conjecture globally |
-| Inverted explores more (in our monitors) | Supported empirical claim |
-| Even half-integers \(\to\infty\) under stated rule | Theorem (stated family) |
-| Inverted always \(\to\infty\) | **False** |
-| Works in “any geometry” | Only in the **discrete models defined here** |
+| Statement | Status |
+|-----------|--------|
+| \(f\) reaches 4-2-1 for large tested ranges | Empirical; global proof open |
+| \(g\) explores more than \(f\) on our monitors | Empirical, reproducible here |
+| Even half-integers \(\to\infty\) under the stated rule | Theorem for that family |
+| All orbits of \(g\) go to \(\infty\) | False |
+| Same statements on arbitrary continuous manifolds | Not defined without extra structure |

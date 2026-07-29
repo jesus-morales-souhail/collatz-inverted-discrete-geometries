@@ -74,11 +74,10 @@ def main() -> int:
             "mean_H_level_normal": sum(lvl_f) / len(lvl_f),
             "mean_H_level_inverted": sum(lvl_g) / len(lvl_g),
         },
-        "canonical_claim": (
-            "The inverted map explores more than the normal map across discrete "
-            "geometry models (Euclidean Z, spherical Z/NZ, hyperbolic tree, 4D product). "
-            "This is an empirical/structural claim about exploration, not a proof that "
-            "all inverted orbits diverge, and not a trading claim."
+        "main_observation": (
+            "The inverted map explores more than the normal map across the discrete "
+            "geometry models implemented here (Z, Z/NZ, hyperbolic tree, product). "
+            "Empirical statement; not a proof of universal divergence under g."
         ),
     }
     out = ROOT / "results" / "summary_reproduced.json"

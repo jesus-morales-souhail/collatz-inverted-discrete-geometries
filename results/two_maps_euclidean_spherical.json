@@ -132,10 +132,10 @@
     }
   },
   "figures": [
-    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/orbits_log.png",
-    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/euclidean_log_phase.png",
-    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/spherical_pca_clouds.png",
-    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/euclidean_expansion_hist.png"
+    "figures/figures/orbits_log.png",
+    "figures/figures/euclidean_log_phase.png",
+    "figures/figures/spherical_pca_clouds.png",
+    "figures/figures/euclidean_expansion_hist.png"
   ],
   "conclusions_es": [
     "ORIGINAL: 100.00% de semillas en 0..19999 alcanzan el atractor {1,2,4} (pasos med. 79.0).",

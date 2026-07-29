@@ -90,5 +90,5 @@
     "mean_H_level_normal": 0.3375,
     "mean_H_level_inverted": 0.45
   },
-  "canonical_claim": "The inverted map explores more than the normal map across discrete geometry models (Euclidean Z, spherical Z/NZ, hyperbolic tree, 4D product). This is an empirical/structural claim about exploration, not a proof that all inverted orbits diverge, and not a trading claim."
+  "main_observation": "The inverted map explores more than the normal map across the discrete geometry models implemented here (Z, Z/NZ, hyperbolic tree, product). Empirical statement; not a proof of universal divergence under g."
 }

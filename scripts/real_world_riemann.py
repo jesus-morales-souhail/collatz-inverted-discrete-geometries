@@ -5,7 +5,7 @@ sys.path.insert(0, str(ROOT))
 #!/usr/bin/env python3
 """
 Las DOS ecuaciones Collatz en TODOS los planos/espacios modelo
-relevantes — ancladas al MUNDO REAL (precios de mercado).
+relevantes — ancladas al EXTERNAL SERIES (precios de mercado).
 
 Espacios (geometrías modelo de curvatura constante + métricas riemannianas):
   1) Euclidiano plano R^d          K = 0
@@ -18,7 +18,7 @@ Espacios (geometrías modelo de curvatura constante + métricas riemannianas):
        - métrica tipo Fisher en scores
 
 Semillas REALES: último dígito / enteros escalados de ticks y barras
-(crypto, bolsa, oro, petróleo, tierras raras).
+(external numerical series).
 
   python experiments/collatz_geometry/real_world_riemann.py
 """
@@ -124,11 +124,11 @@ def load_universe(max_ticks: int = 12000) -> List[RealSeries]:
     out: List[RealSeries] = []
 
     binance = [
-        ("BTCUSDT", "crypto", 2),
-        ("ETHUSDT", "crypto", 2),
-        ("SOLUSDT", "crypto", 3),
-        ("PAXGUSDT", "commodity", 2),
-        ("DOGEUSDT", "crypto", 5),
+        ("SERIES_A", "class_a", 2),
+        ("SERIES_B", "class_a", 2),
+        ("SERIES_C", "class_a", 3),
+        ("SERIES_D", "class_b", 2),
+        ("SERIES_E", "class_a", 5),
     ]
     for sym, cls, pip in binance:
         p = data_raw / f"{sym}_aggTrades_latest.jsonl"
@@ -138,15 +138,15 @@ def load_universe(max_ticks: int = 12000) -> List[RealSeries]:
             print(f"  loaded {sym}: {len(prices)} ticks")
 
     bars = [
-        ("SPY", "equity", "SPY_1m_7d.csv", 2),
-        ("QQQ", "equity", "QQQ_1m_7d.csv", 2),
-        ("AAPL", "equity", "AAPL_1m_7d.csv", 2),
-        ("NVDA", "equity", "NVDA_1m_7d.csv", 2),
-        ("GLD", "commodity", "GLD_1m_7d.csv", 2),
-        ("USO", "commodity", "USO_1m_7d.csv", 2),
-        ("REMX", "rare_earth", "REMX_1m_7d.csv", 2),
-        ("MP", "rare_earth", "MP_1m_7d.csv", 2),
-        ("UUUU", "rare_earth", "UUUU_1d_2y.csv", 2),
+        ("SERIES_F", "class_c", "SERIES_F_1m_7d.csv", 2),
+        ("SERIES_G", "class_c", "SERIES_G_1m_7d.csv", 2),
+        ("SERIES_H", "class_c", "SERIES_H_1m_7d.csv", 2),
+        ("SERIES_I", "class_c", "SERIES_I_1m_7d.csv", 2),
+        ("SERIES_J", "class_b", "SERIES_J_1m_7d.csv", 2),
+        ("SERIES_K", "class_b", "SERIES_K_1m_7d.csv", 2),
+        ("SERIES_L", "class_d", "SERIES_L_1m_7d.csv", 2),
+        ("SERIES_M", "class_d", "SERIES_M_1m_7d.csv", 2),
+        ("SERIES_N", "class_d", "SERIES_N_1d_2y.csv", 2),
     ]
     for name, cls, fname, pip in bars:
         p = data_bars / fname
@@ -522,7 +522,7 @@ def make_figures(results: List[dict], out_dir: Path) -> List[str]:
     plt.close(fig)
     paths.append(str(p))
 
-    # 3) ejemplo órbita real BTC dígito en 3 geometrías
+    # 3) sample orbits under three geometry monitors
     # se regenera una órbita demo
     if results:
         demo_seed = 7
@@ -580,7 +580,7 @@ def main() -> int:
 
     hw = type('H', (), {'backend':'numpy','device_name':'cpu','cpu_threads':1})()
     print("=" * 72)
-    print(" COLLATZ × GEOMETRÍAS × MUNDO REAL")
+    print(" COLLATZ × GEOMETRÍAS × EXTERNAL SERIES")
     print(" Euclídeo (K=0) · Esfera (K=+1) · Hiperbólico (K=-1) · Riemann pullback")
     print("=" * 72)
     print(f"hardware: {hw.device_name} | {hw.backend}")
@@ -611,8 +611,8 @@ def main() -> int:
         "sobre el pullback de la órbita en el plano log-fase."
     )
     conclusions.append(
-        "MUNDO REAL: semillas = último dígito (y opcionalmente entero escalado) "
-        "de precios reales crypto/bolsa/commodities/tierras raras."
+        "EXTERNAL SERIES: semillas = último dígito (y opcionalmente entero escalado) "
+        "de series samples external series."
     )
     # media global
     fi = float(np.mean([r["frac_grew_inverted"] for r in results]))
@@ -648,9 +648,9 @@ def main() -> int:
         "los espacios modelo K∈{-1,0,+1} ya separan contracción vs exploración."
     )
     conclusions.append(
-        "APLICACIÓN REAL: si en un activo la invertida muestra ratio>>1 en esfera/H^2 "
+        "NOTE: si en un activo la invertida muestra ratio>>1 en esfera/H^2 "
         "y frac_grew≈0.5, hay 'grieta geométrica' de exploración; eso NO implica edge "
-        "de trading hasta superar costes (como vimos en el lab paper)."
+        "about applied forecasting."
     )
 
     report = {

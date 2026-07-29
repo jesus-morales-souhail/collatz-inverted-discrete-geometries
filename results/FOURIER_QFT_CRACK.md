@@ -1,21 +1,22 @@
-# Fourier / QFT crack detector
+# DFT, inverse DFT, and simulated QFT
 
-## Pipeline
-1. Classical DFT and inverse DFT on Collatz orbit signals.
-2. Encode signal as quantum amplitudes |ψ⟩.
-3. Apply unitary QFT (simulated) and read Born probabilities P(k).
-4. Compare f vs g spectra → crack_probability score.
-5. Variational w(k;θ)=softmax(θ) maximizing E_w[p_g−p_f].
+## Steps
 
-## Numbers (default run)
-- DFT roundtrip error ~ 9.84e-16
-- QFT fidelity ~ 1.000000
-- QFT TV(f,g) = 0.1958
-- crack_probability = 0.6038
-- variational J* = 0.0579
+1. Build orbit signals under \(f\) and \(g\) (parity or \(\log(1+X_t)\)).  
+2. Classical DFT; recover the signal with the inverse DFT.  
+3. Encode a unit amplitude vector and apply the unitary QFT matrix of size \(2^n\).  
+4. Compare the two spectral measures (total variation, \(L^2\)).  
+5. Optional: weights \(w(k;\theta)=\mathrm{softmax}(\theta)\) maximising \(\mathbb{E}_w[|p_g-p_f|]\).
 
-## Boundary
-Not a hardware quantum claim. Not a trading claim.
-Not a proof of universal inverted divergence.
+## Typical numbers (default script)
 
-Figures: `/home/ashpokemon/Proyectos/collatz-inverted-discrete-geometries/figures/fourier`
+- DFT reconstruction error on the order of \(10^{-15}\).  
+- QFT round-trip fidelity equal to 1 within numerical error.  
+- Clear separation of classical parity power spectra between \(f\) and \(g\).  
+- A separability score in \([0,1]\) summarised as `crack_probability` in the JSON (spectral only).
+
+## Note
+
+The QFT is implemented as dense linear algebra on a classical machine. No quantum device is involved.
+
+Figures: `figures/fourier/`.

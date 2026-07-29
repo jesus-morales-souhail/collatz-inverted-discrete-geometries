@@ -45,7 +45,7 @@ def main() -> int:
     n_qubits = 6  # 64 bins
 
     print("=" * 70)
-    print(" DFT ↔ iDFT → QFT  |  grieta f vs g en espectro")
+    print(" DFT ↔ iDFT → QFT  |  spectral separation f vs g")
     print("=" * 70)
 
     report, ex = analyze_crack(seeds, steps=steps, n_qubits=n_qubits)
@@ -56,7 +56,7 @@ def main() -> int:
     print(f"DFT TV(f,g):  {report.dft_tv:.4f}   L2: {report.dft_l2:.4f}")
     print(f"QFT TV(f,g):  {report.qft_tv:.4f}   L2: {report.qft_l2:.4f}")
     print(f"QFT entropy f/g: {report.qft_entropy_f:.3f} / {report.qft_entropy_g:.3f}")
-    print(f"Crack probability score: {report.crack_probability:.4f}")
+    print(f"Separability score: {report.crack_probability:.4f}")
     print(f"Variational J (weighted Δp): {var['J_final']:.4f}")
 
     # ── figures ──
@@ -65,7 +65,7 @@ def main() -> int:
     freqs = ex["freqs_rfft"]
     axes[0].semilogy(freqs, ex["Pf_classical"] + 1e-15, label="f normal", color="#1c7ed6")
     axes[0].semilogy(freqs, ex["Pg_classical"] + 1e-15, label="g inverted", color="#e03131")
-    axes[0].set_title("Classical power spectrum (parity ensemble)")
+    axes[0].set_title("Classical power spectrum (mean over seeds)")
     axes[0].set_xlabel("frequency")
     axes[0].set_ylabel("|DFT|² mean")
     axes[0].legend()
@@ -80,7 +80,7 @@ def main() -> int:
     axes[1].legend()
     axes[1].grid(True, alpha=0.3)
     fig.suptitle(
-        f"Grieta en frecuencia: crack_p={report.crack_probability:.3f}  |  QFT TV={report.qft_tv:.3f}",
+        f"Spectral separation f vs g: crack_p={report.crack_probability:.3f}  |  QFT TV={report.qft_tv:.3f}",
         fontsize=11,
     )
     fig.tight_layout()
@@ -139,7 +139,7 @@ def main() -> int:
     ax.axis("off")
     ax.set_xlim(0, 10)
     ax.set_ylim(0, 6)
-    ax.text(5, 5.5, "DFT → iDFT → QFT → probabilidad de grieta", ha="center", fontsize=13, fontweight="bold")
+    ax.text(5, 5.5, "DFT → iDFT → QFT → separability score", ha="center", fontsize=13, fontweight="bold")
     ax.text(
         5, 4.2,
         "1) Señal de órbita f o g (paridad / log)\n"
@@ -154,7 +154,7 @@ def main() -> int:
         5, 1.5,
         f"crack_p = {report.crack_probability:.3f}   |   QFT TV = {report.qft_tv:.3f}   |   "
         f"J* = {var['J_final']:.3f}\n"
-        "Simulación de QFT (álgebra lineal). No es ventaja hardware cuántica ni edge de trading.",
+        "QFT implemented as dense linear algebra on a classical machine.",
         ha="center", fontsize=9,
         bbox=dict(boxstyle="round", facecolor="#fff3bf", edgecolor="#f59f00"),
     )
@@ -207,7 +207,7 @@ def main() -> int:
                 f"- variational J* = {var['J_final']:.4f}",
                 "",
                 "## Boundary",
-                "Not a hardware quantum claim. Not a trading claim.",
+                "Simulated QFT only; not a claim of quantum hardware advantage.",
                 "Not a proof of universal inverted divergence.",
                 "",
                 f"Figures: `{OUT}`",

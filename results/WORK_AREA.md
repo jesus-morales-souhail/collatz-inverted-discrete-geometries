@@ -1,21 +1,13 @@
-# Trabajo = Fuerza × Distancia = Área
+# Work along an orbit
 
-A lo largo de una órbita Collatz embebida en el plano \((\log(1+x),\, t)\):
-
-\[
-F_t = \Delta \log(1+x),\qquad
-d_t = \mathrm{d}s,\qquad
-\mathrm{d}W_t = F_t\, d_t
-\]
+On the plane \((\log(1+x),t)\):
 
 \[
-W = \sum_t F_t\, d_t = \int F\,\mathrm{d}s
-= \textbf{área bajo la curva } F(s)
+F_t=\Delta\log(1+x),\qquad
+d_t=\mathrm{d}s,\qquad
+W=\sum_t F_t\,d_t=\int F\,\mathrm{d}s.
 \]
 
-- **Fuerza** \(F\): crecimiento (+) o contracción (−) del número en escala log.
-- **Distancia** \(d\): longitud del tramo del camino geométrico.
-- **Área**: lo que determina el trabajo neto de la trayectoria.
+The sum equals the signed area under \(F\) against arc length. It is a bookkeeping identity for the embedded orbit, not a claim that Collatz dynamics are Newtonian mechanics.
 
-Figuras: `figures/work/`
-JSON: `work_force_distance.json`
+Figures: `figures/work/`.

@@ -1,35 +1,19 @@
-# Línea de celdas 1D + Riemann 4 capas
+# One-dimensional cells and four path monitors
 
-## Dimensiones
-0. Celda 1D (t)
-1. Euclidiano K=0 (s_E)
-2. Esférico K=+1 (s_S)
-3. Hiperbólico K=-1 (s_H)
+## Coordinates
 
-## Haces
-- →1 original: L4=51.800, sS=7.010
-- →∞ invertida: L4=34.196, sS=3.009
-- ratio L4(∞/1)=0.660
+0. Cell index \(t\) along the orbit.  
+1. Cumulative Euclidean path length \(s_E\).  
+2. Cumulative spherical path length \(s_S\).  
+3. Cumulative hyperbolic path length \(s_H\).
 
-## Conclusiones
-- La línea de celdas 1D es el soporte de la cadena de Markov X_{t+1}=f(X_t).
-- Euclídeo, esférico e hiperbólico se evalúan a la vez como monitores de distancia.
-- El producto (t,sE,sS,sH) es la representación 4D de Riemann del lab.
-- Haz →1 (original): longitudes menores / acotadas hacia el atractor.
-- Haz →∞ (invertida, esp. par.5): longitudes mayores en las 4 capas.
-- Los 3 planos clásicos + la celda base = 4 dimensiones de medida, no una 4-variedad libre arbitraria.
+The tuple \((t,s_E,s_S,s_H)\) is a product of monitors, not an independent smooth 4-manifold with a built-in parity.
 
-Figuras: `experiments/collatz_geometry/figures/riemann4`
+## Bundles
 
-## Comparación justa (mismo T=20 celdas)
+- Toward 1: iterate \(f\).  
+- Toward large values: iterate \(g\) (including the even half-integer family where divergence is proved).
 
-| | →1 original | →∞ invertida | ratio ∞/1 |
-|---|---|---|---|
-| L4 | 35.18 | 36.32 | 1.032 |
-| sE | 23.24 | 26.55 | 1.142 |
-| sS | 5.421 | 4.08 | 0.7525 |
-| sH | 14.97 | 9.358 | 0.6249 |
-| W | -0.3019 | 18.32 | 60.68 |
-| maxv | 50 | 4.184e+09 | 8.368e+07 |
+With a fixed number of steps, \(g\)-orbits typically show much larger peak values and larger work \(\sum F_t\,d_t\) with \(F=\Delta\log(1+x)\), while \(f\)-orbits remain closer to the attractor region.
 
-Con el **mismo** número de celdas: el haz →∞ tiene **trabajo W** y **max|x|** enormes; el haz →1 permanece acotado hacia el atractor.
+Figures: `figures/riemann4/`.
