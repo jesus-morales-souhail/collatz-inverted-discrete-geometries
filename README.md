@@ -95,7 +95,14 @@ Optional figure scripts (matplotlib):
 python scripts/markov_dependent.py
 python scripts/discrete_geometry_ca.py
 python scripts/two_maps_euclidean_spherical.py
+python scripts/fourier_qft_crack.py   # DFT → iDFT → QFT → crack probability
 ```
+
+### Fourier / QFT crack channel
+
+Classical **DFT** and **inverse DFT** (numerical roundtrip ~1e-15), then a **simulated unitary QFT** on amplitudes encoded from orbit signals. Separation of spectral measures of \(f\) vs \(g\) yields a `crack_probability` score; a variational weight \(w(k;\theta)=\mathrm{softmax}(\theta)\) maximizes \(\mathbb{E}_w[|p_g-p_f|]\).
+
+See `results/FOURIER_QFT_CRACK.md` and `BOUNDARY.md` (no hardware quantum claim).
 
 ---
 

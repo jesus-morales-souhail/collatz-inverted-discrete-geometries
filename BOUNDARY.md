@@ -18,6 +18,9 @@ This note is the claim fence (same spirit as other public repos under this accou
 - That Euclidean postulates alone prove arithmetic divergence.
 - Trading profitability, market edge, or financial advice (any trading lab code is **out of scope** here).
 - That multi-geometry “exploration” equals a physical force law of nature.
+- That a **simulated** Quantum Fourier Transform (unitary DFT on a classical computer)
+  implies hardware quantum advantage, or that `crack_probability` is a physical
+  measurement probability on a real QPU.
 
 ## Language discipline
 
