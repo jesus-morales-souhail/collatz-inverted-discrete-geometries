@@ -1,0 +1,149 @@
+{
+  "equations": {
+    "original": {
+      "even": "n/2",
+      "odd": "3n+1",
+      "behavior": "atractor 4\u21922\u21921"
+    },
+    "inverted": {
+      "even": "3n+1",
+      "odd": "n/2",
+      "behavior": "crecimiento ~50% a horizonte corto; muchos ciclos a largo plazo"
+    }
+  },
+  "hardware": {
+    "backend": "torch_cuda",
+    "device": "NVIDIA GeForce RTX 5070 Ti",
+    "threads": 14
+  },
+  "discrete": {
+    "original": {
+      "n_max": 20000,
+      "frac_reach_421": 1.0,
+      "n_reach_421": 20000,
+      "mean_steps_to_421": 89.73045,
+      "median_steps_to_421": 79.0,
+      "mean_max_excursion": 113980.33055,
+      "p99_max_excursion": 1276936.0
+    },
+    "inverted_horizons": {
+      "h5": {
+        "frac_x_h_gt_x0": 0.6871,
+        "mean_log1p_growth": -0.27487329523166526,
+        "median_log1p_growth": 0.11761816178562157,
+        "frac_final_gt_1e6": 0.0,
+        "frac_final_gt_1e12": 0.0
+      },
+      "h10": {
+        "frac_x_h_gt_x0": 0.49965,
+        "mean_log1p_growth": -0.7618562069805735,
+        "median_log1p_growth": -0.8958797346140275,
+        "frac_final_gt_1e6": 0.0,
+        "frac_final_gt_1e12": 0.0
+      },
+      "h20": {
+        "frac_x_h_gt_x0": 0.2892,
+        "mean_log1p_growth": -1.7302223959675238,
+        "median_log1p_growth": -1.3223871246675767,
+        "frac_final_gt_1e6": 0.00075,
+        "frac_final_gt_1e12": 0.0
+      },
+      "h50": {
+        "frac_x_h_gt_x0": 0.0737,
+        "mean_log1p_growth": -4.33379671394686,
+        "median_log1p_growth": -4.274492691238253,
+        "frac_final_gt_1e6": 0.0016,
+        "frac_final_gt_1e12": 0.0
+      },
+      "h100": {
+        "frac_x_h_gt_x0": 0.0155,
+        "mean_log1p_growth": -6.202988433632568,
+        "median_log1p_growth": -6.420169208069738,
+        "frac_final_gt_1e6": 0.00015,
+        "frac_final_gt_1e12": 0.0
+      }
+    },
+    "inverted_cycles": {
+      "sample": 5000,
+      "frac_hit_cycle_within_200_steps": 1.0,
+      "note": "Muchas semillas de la invertida caen en ciclos finitos a largo plazo; el ~50% es crecimiento a horizonte corto, no teorema de escape a \u221e."
+    }
+  },
+  "euclidean": {
+    "original": {
+      "n_seeds": 1999,
+      "steps": 40,
+      "mean_expansion": 0.5586105153565224,
+      "median_expansion": 0.4875745668273018,
+      "p90_expansion": 1.1012994399536893,
+      "mean_path_length": 44.448293659892556,
+      "frac_expansion_gt_1": 0.11455727863931967,
+      "frac_expansion_gt_2": 0.0
+    },
+    "inverted": {
+      "n_seeds": 1999,
+      "steps": 40,
+      "mean_expansion": 0.5047976222892516,
+      "median_expansion": 0.4579568407669958,
+      "p90_expansion": 0.943432361913277,
+      "mean_path_length": 45.61663722946046,
+      "frac_expansion_gt_1": 0.07553776888444222,
+      "frac_expansion_gt_2": 0.0
+    }
+  },
+  "spherical": {
+    "original": {
+      "n_seeds": 1999,
+      "steps": 40,
+      "sphere_dim": 8,
+      "mean_geodesic_path": 6.784828743747481,
+      "mean_end_to_start_geodesic": 0.23276381005664518,
+      "mean_geodesic_step": 0.2056008710226509,
+      "median_end_to_start_geodesic": 0.20215319279007132
+    },
+    "inverted": {
+      "n_seeds": 1999,
+      "steps": 40,
+      "sphere_dim": 8,
+      "mean_geodesic_path": 9.305994347191977,
+      "mean_end_to_start_geodesic": 0.32806331690735724,
+      "mean_geodesic_step": 0.28199982870278717,
+      "median_end_to_start_geodesic": 0.21968287932614364
+    }
+  },
+  "local_expansion": {
+    "original": {
+      "inverted": false,
+      "mean_ratio": 1.7504740351609551,
+      "median_ratio": 1.7500500050005001,
+      "mean_log_ratio": 0.1995168660970853,
+      "even_mean_ratio": 0.4999,
+      "odd_mean_ratio": 3.0010480703219105,
+      "theory_note": "Original: par\u21921/2, impar\u2192~3; Invertida: par\u2192~3, impar\u21921/2. Media geom\u00e9trica de factores de paridad aleatoria: orig \u2248 sqrt(0.5*3)=sqrt(1.5)>1 en tramos impares pero el mapa cae al ciclo; inv \u2248 misma media local pero con paridad intercambiada y din\u00e1micas enteras distintas."
+    },
+    "inverted": {
+      "inverted": true,
+      "mean_ratio": 1.7499926978621716,
+      "median_ratio": 0.7499749974997499,
+      "mean_log_ratio": 0.19894964895479927,
+      "even_mean_ratio": 3.0005094308852986,
+      "odd_mean_ratio": 0.4994759648390447,
+      "theory_note": "Original: par\u21921/2, impar\u2192~3; Invertida: par\u2192~3, impar\u21921/2. Media geom\u00e9trica de factores de paridad aleatoria: orig \u2248 sqrt(0.5*3)=sqrt(1.5)>1 en tramos impares pero el mapa cae al ciclo; inv \u2248 misma media local pero con paridad intercambiada y din\u00e1micas enteras distintas."
+    }
+  },
+  "figures": [
+    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/orbits_log.png",
+    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/euclidean_log_phase.png",
+    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/spherical_pca_clouds.png",
+    "/home/ashpokemon/Proyectos/06_Trading_Simulacion/collatz_ensemble_bot/experiments/collatz_geometry/figures/euclidean_expansion_hist.png"
+  ],
+  "conclusions_es": [
+    "ORIGINAL: 100.00% de semillas en 0..19999 alcanzan el atractor {1,2,4} (pasos med. 79.0).",
+    "INVERTIDA: tras 10 pasos, 49.96% cumple x_10 > x_0 (m\u00e9trica emp\u00edrica ~50\u201352%).",
+    "INVERTIDA ciclos: 100.0% de muestra corta cae en ciclo \u2264200 pasos \u2192 no es escape universal a \u221e.",
+    "EUCL\u00cdDEO: expansi\u00f3n media original=0.559, invertida=0.505 (fracci\u00f3n expand>1: orig 0.11, inv 0.08).",
+    "ESF\u00c9RICO: longitud geod\u00e9sica media original=6.785, invertida=9.306; distancia fin-inicio media orig=0.233, inv=0.328.",
+    "EXPANSI\u00d3N LOCAL: original mean_ratio=1.750 (par 0.500 / impar 3.001); invertida mean_ratio=1.750 (par 3.001 / impar 0.499).",
+    "MATEM\u00c1TICA APLICABLE: ambos mapas son funciones N\u2192N (o Z) medibles; se embuten isom\u00e9tricamente en R^d (fase) y se proyectan a S^{d-1}. La diferencia no es 'eucl\u00eddeo vs esf\u00e9rico' sino la din\u00e1mica del mapa: el original colapsa al ciclo; la invertida explora m\u00e1s la esfera y el plano log antes de ciclar o crecer a horizonte finito."
+  ]
+}

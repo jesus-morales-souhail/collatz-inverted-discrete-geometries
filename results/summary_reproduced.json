@@ -1,0 +1,94 @@
+{
+  "original_reach_421_frac_0_to_n": 1.0,
+  "n_max": 5000,
+  "inverted_frac_x10_gt_x0": 0.4986,
+  "markov_deterministic": {
+    "n_states": 630,
+    "deterministic_ok": true,
+    "violations": {}
+  },
+  "parity_transitions_inverted": {
+    "n_transitions": 7500,
+    "P_next_parity_given_now": {
+      "0": {
+        "0": 0.0,
+        "1": 1.0
+      },
+      "1": {
+        "0": 0.5569910397999583,
+        "1": 0.44300896020004166
+      }
+    }
+  },
+  "even_dot5": {
+    "theorem_one_step_preserves_even_half_and_increases": true,
+    "samples": [
+      {
+        "k": 0,
+        "x0": 0.5,
+        "x_final": 531440.5,
+        "grew": true
+      },
+      {
+        "k": 1,
+        "x0": 2.5,
+        "x_final": 1594322.5,
+        "grew": true
+      },
+      {
+        "k": 2,
+        "x0": 4.5,
+        "x_final": 2657204.5,
+        "grew": true
+      },
+      {
+        "k": 3,
+        "x0": 6.5,
+        "x_final": 3720086.5,
+        "grew": true
+      },
+      {
+        "k": 4,
+        "x0": 8.5,
+        "x_final": 4782968.5,
+        "grew": true
+      },
+      {
+        "k": 5,
+        "x0": 10.5,
+        "x_final": 5845850.5,
+        "grew": true
+      },
+      {
+        "k": 10,
+        "x0": 20.5,
+        "x_final": 11160260.5,
+        "grew": true
+      },
+      {
+        "k": 50,
+        "x0": 100.5,
+        "x_final": 53675540.5,
+        "grew": true
+      },
+      {
+        "k": 100,
+        "x0": 200.5,
+        "x_final": 106819640.5,
+        "grew": true
+      }
+    ],
+    "note": "Full \u221e follows by induction on reals; float may break form at huge magnitude."
+  },
+  "spherical_frac_visit_1": {
+    "normal_f": 0.984375,
+    "inverted_g": 0.4375
+  },
+  "product_4d": {
+    "mean_log1p_E_normal": 1.8205325629807878,
+    "mean_log1p_E_inverted": 2.217932482445352,
+    "mean_H_level_normal": 0.3375,
+    "mean_H_level_inverted": 0.45
+  },
+  "canonical_claim": "The inverted map explores more than the normal map across discrete geometry models (Euclidean Z, spherical Z/NZ, hyperbolic tree, 4D product). This is an empirical/structural claim about exploration, not a proof that all inverted orbits diverge, and not a trading claim."
+}

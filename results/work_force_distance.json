@@ -1,0 +1,130 @@
+{
+  "definition": {
+    "work": "W = \u03a3 F_t * d_t = \u222b F ds = \u00e1rea bajo F(s)",
+    "force": "F_t = log(1+x_{t+1}) - log(1+x_t)",
+    "distance": "d_t = sqrt( (\u0394log)^2 + (\u0394t)^2 )  embedding (log(1+x), t)",
+    "note": "Analog\u00eda mec\u00e1nica rigurosa como funcional de la \u00f3rbita; no implica leyes f\u00edsicas del mundo real sobre enteros."
+  },
+  "examples": [
+    {
+      "n0": 0,
+      "original": {
+        "W": 0.0,
+        "area": 0.0,
+        "s": 25.0,
+        "W_plus": 0.0,
+        "W_minus": 0.0
+      },
+      "inverted": {
+        "W": 0.8433789850958374,
+        "area": 0.8433789850958374,
+        "s": 30.418466984693286,
+        "W_plus": 10.963926806245887,
+        "W_minus": -10.12054782115005
+      }
+    },
+    {
+      "n0": 1,
+      "original": {
+        "W": 3.0958693178519083,
+        "area": 3.0958693178519083,
+        "s": 29.822762919435466,
+        "W_plus": 11.185004687203444,
+        "W_minus": -8.089135369351535
+      },
+      "inverted": {
+        "W": -0.8433789850958374,
+        "area": -0.8433789850958374,
+        "s": 30.418466984693286,
+        "W_plus": 10.12054782115005,
+        "W_minus": -10.963926806245887
+      }
+    },
+    {
+      "n0": 6,
+      "original": {
+        "W": 0.9732254383333002,
+        "area": 0.9732254383333,
+        "s": 29.999374805617897,
+        "W_plus": 10.399287228135936,
+        "W_minus": -9.426061789802635
+      },
+      "inverted": {
+        "W": 2.3489671804741983,
+        "area": 2.348967180474199,
+        "s": 32.67698853293876,
+        "W_plus": 14.999651956911759,
+        "W_minus": -12.65068477643756
+      }
+    },
+    {
+      "n0": 7,
+      "original": {
+        "W": 0.5647236748707704,
+        "area": 0.5647236748707708,
+        "s": 30.884601724052644,
+        "W_plus": 11.502643716857,
+        "W_minus": -10.937920041986228
+      },
+      "inverted": {
+        "W": -2.530136955287512,
+        "area": -2.530136955287512,
+        "s": 30.418466984693286,
+        "W_plus": 9.277168836054212,
+        "W_minus": -11.807305791341722
+      }
+    },
+    {
+      "n0": 10,
+      "original": {
+        "W": 0.9808187444857297,
+        "area": 0.9808187444857297,
+        "s": 29.866387247335375,
+        "W_plus": 10.203123623334536,
+        "W_minus": -9.222304878848805
+      },
+      "inverted": {
+        "W": -1.8112962615983217,
+        "area": -1.8112962615983217,
+        "s": 30.664699122198936,
+        "W_plus": 9.996009529743402,
+        "W_minus": -11.807305791341724
+      }
+    },
+    {
+      "n0": 27,
+      "original": {
+        "W": 8.356153594785054,
+        "area": 8.356153594785056,
+        "s": 53.13261555915862,
+        "W_plus": 27.59106349234586,
+        "W_minus": -19.234909897560804
+      },
+      "inverted": {
+        "W": 1.4371449744459224,
+        "area": 1.4371449744459228,
+        "s": 52.06460986245732,
+        "W_plus": 22.521619601841856,
+        "W_minus": -21.084474627395934
+      }
+    }
+  ],
+  "batch": {
+    "n_max": 2000,
+    "steps": 20,
+    "mean_W_original": 0.00695565851142404,
+    "mean_W_inverted": -0.24494540459941272,
+    "mean_s_original": 25.989578389266683,
+    "mean_s_inverted": 26.07904793984149,
+    "frac_W_inv_gt_orig": 0.413,
+    "frac_s_inv_gt_orig": 0.5365,
+    "mean_area_equals_W": true
+  },
+  "conclusions_es": [
+    "El trabajo W coincide por definici\u00f3n con el \u00e1rea bajo la curva fuerza\u2013distancia F(s).",
+    "La distancia d es la longitud de camino en el embedding; F es el crecimiento logar\u00edtmico del mapa.",
+    "Comparar original vs invertida en t\u00e9rminos de W y s formaliza la 'grieta' como balance de trabajo a lo largo del camino.",
+    "En el batch 0..1999 (20 pasos): se reportan medias de W y s para ambos mapas.",
+    "Esto NO demuestra divergencia a infinito; organiza la din\u00e1mica como energ\u00eda/trabajo geom\u00e9trico."
+  ]
+}

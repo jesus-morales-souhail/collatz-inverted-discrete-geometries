@@ -1,0 +1,58 @@
+{
+  "cell_line": "1D discrete cells t=0,1,2,... holding X_t",
+  "riemann_4_dims": {
+    "dim0": "cell index t (1D base)",
+    "dim1": "cumulative Euclidean path length s_E (K=0)",
+    "dim2": "cumulative spherical geodesic s_S (K=+1)",
+    "dim3": "cumulative hyperbolic geodesic s_H (K=-1)",
+    "product": "point (t, s_E, s_S, s_H) in R^4 monitor space"
+  },
+  "bundle_to_one": {
+    "n": 6,
+    "mean_L4": 51.799921166021505,
+    "mean_sE": 34.05019952872722,
+    "mean_sS": 7.010029794516252,
+    "mean_sH": 23.944990114141124,
+    "mean_work": 1.3613532379989002,
+    "labels": [
+      "orig_6",
+      "orig_7",
+      "orig_10",
+      "orig_12",
+      "orig_19",
+      "orig_27"
+    ]
+  },
+  "bundle_to_inf": {
+    "n": 8,
+    "mean_L4": 34.196425281522885,
+    "mean_sE": 25.352570601610093,
+    "mean_sS": 3.00890533082409,
+    "mean_sH": 8.668047921597257,
+    "mean_work": 18.54482917090028,
+    "labels": [
+      "even5_0.5",
+      "even5_2.5",
+      "even5_4.5",
+      "even5_6.5",
+      "even5_10.5",
+      "inv_10",
+      "inv_12",
+      "inv_20"
+    ]
+  },
+  "comparison": {
+    "L4_ratio_inf_over_one": 0.6601636549198892,
+    "sE_ratio": 0.7445645239235918,
+    "sS_ratio": 0.4292286080121758,
+    "sH_ratio": 0.36199839215962726
+  },
+  "conclusions_es": [
+    "La l\u00ednea de celdas 1D es el soporte de la cadena de Markov X_{t+1}=f(X_t).",
+    "Eucl\u00eddeo, esf\u00e9rico e hiperb\u00f3lico se eval\u00faan a la vez como monitores de distancia.",
+    "El producto (t,sE,sS,sH) es la representaci\u00f3n 4D de Riemann del lab.",
+    "Haz \u21921 (original): longitudes menores / acotadas hacia el atractor.",
+    "Haz \u2192\u221e (invertida, esp. par.5): longitudes mayores en las 4 capas.",
+    "Los 3 planos cl\u00e1sicos + la celda base = 4 dimensiones de medida, no una 4-variedad libre arbitraria."
+  ]
+}

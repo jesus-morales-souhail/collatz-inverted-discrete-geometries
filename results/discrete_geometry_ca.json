@@ -1,0 +1,92 @@
+{
+  "principle": "No continuous parity on Riemann manifold without discretization. Discrete models only.",
+  "equations": {
+    "f_normal": "even\u2192n/2, odd\u21923n+1",
+    "g_inverted": "even\u21923n+1, odd\u2192n/2"
+  },
+  "euclidean": {
+    "normal_f": {
+      "frac_visit_1_or_421": 0.74,
+      "frac_end_near_attractor": 0.715,
+      "frac_diverged_proxy": 0.0,
+      "frac_small_cycle_proxy": 0.715
+    },
+    "inverted_g": {
+      "frac_visit_1_or_421": 0.385,
+      "frac_end_near_attractor": 0.385,
+      "frac_diverged_proxy": 0.0,
+      "frac_small_cycle_proxy": 0.69
+    }
+  },
+  "spherical": {
+    "normal_f": {
+      "N": 128,
+      "frac_visit_1": 0.984375,
+      "mean_unique_frac": 0.12554931640625,
+      "mean_period_proxy": 2.96875,
+      "no_infinity": true,
+      "note": "Espacio finito: no existe n\u2192\u221e"
+    },
+    "inverted_g": {
+      "N": 128,
+      "frac_visit_1": 0.4375,
+      "mean_unique_frac": 0.10260009765625,
+      "mean_period_proxy": 3.6875,
+      "no_infinity": true,
+      "note": "Espacio finito: no existe n\u2192\u221e"
+    }
+  },
+  "hyperbolic": {
+    "normal_f": {
+      "mean_final_level": 0.3375,
+      "mean_final_value": 75.9125,
+      "mean_log1p_final_value": 1.8205325629807878,
+      "mean_max_capacity": 2.0,
+      "mean_log2_max_capacity": 1.0
+    },
+    "inverted_g": {
+      "mean_final_level": 0.45,
+      "mean_final_value": 31.925,
+      "mean_log1p_final_value": 2.217932482445352,
+      "mean_max_capacity": 2.0,
+      "mean_log2_max_capacity": 1.0
+    }
+  },
+  "product_4d": {
+    "bundle_to_1_normal": {
+      "mean_log1p_E": 1.6522846706685228,
+      "mean_S": 2.2,
+      "max_S": 4,
+      "mean_H_level": 0.3333333333333333,
+      "mean_log1p_H_val": 1.6522846706685228,
+      "frac_E_eq_1": 0.31666666666666665,
+      "frac_E_gt_1e4": 0.0,
+      "S_always_bounded": true
+    },
+    "bundle_to_inf_inverted": {
+      "mean_log1p_E": 2.0132187691499634,
+      "mean_S": 5.05,
+      "max_S": 19,
+      "mean_H_level": 0.35,
+      "mean_log1p_H_val": 2.0132187691499634,
+      "frac_E_eq_1": 0.18333333333333332,
+      "frac_E_gt_1e4": 0.0,
+      "S_always_bounded": true
+    }
+  },
+  "wolfram_rules_shown": [
+    30,
+    90,
+    110,
+    184
+  ],
+  "github_link": "https://github.com/jesus-morales-souhail \u2014 cell/measurable philosophy",
+  "conclusions_es": [
+    "Euclidiano Z: f empuja a 4-2-1 (conjetura); g mezcla divergencia y ciclos (~no siempre \u221e).",
+    "Esf\u00e9rico Z/N: no existe \u221e; f visita 1 m\u00e1s que g; g tiene m\u00e1s exploraci\u00f3n en el anillo.",
+    "Hiperb\u00f3lico: g sube de nivel (capacidad exp) cuando el valor crece; f baja de nivel hacia el atractor.",
+    "Producto 4D: modo f \u2192 componentes E/H acotadas hacia 1; modo g \u2192 E/H crecen; S siempre finita.",
+    "CA elementales: Markov espacial local; misma l\u00f3gica que Collatz (dependencia del presente).",
+    "Grieta: paridad Collatz = cinta temporal; CA = cinta espacial; juntas muestran dependencia \u2260 independencia."
+  ]
+}

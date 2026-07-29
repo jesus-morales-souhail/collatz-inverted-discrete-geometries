@@ -1,0 +1,148 @@
+{
+  "train_metaphor": {
+    "original": "Tren que (en la pr\u00e1ctica conocida) acaba en estaci\u00f3n 4-2-1 \u2014 conjetura en Z+, no teorema.",
+    "inverted_even_dot5": "Tren en v\u00eda par.5: TEOREMA \u2192 +\u221e bajo f=3x+1 cuando floor par.",
+    "inverted_odd_dot5": "Tren en v\u00eda impar.5: x/2 primero; NO teorema de \u221e.",
+    "inverted_general": "NO todo va a \u221e (ciclos 0\u21941, etc.)."
+  },
+  "theorem_even_dot5": {
+    "statement": "Si x0=2k+0.5 (k entero \u22650) y f(x)=3x+1 cuando floor(x) par, entonces floor(x0)=2k par, f(x0)=6k+2.5=2(3k+1)+0.5, floor sigue par, y f(x)=3x+1 > x para x>0. Por inducci\u00f3n x_n \u2192 +\u221e.",
+    "empiric_k_0_to": 5000,
+    "all_samples_diverge_mono_even5": false,
+    "samples": [
+      {
+        "k": 0,
+        "x0": 0.5,
+        "x_final": 1563485784343741.5,
+        "ok_form": false,
+        "ok_mono": false,
+        "ratio": 3126971568687483.0
+      },
+      {
+        "k": 1,
+        "x0": 2.5,
+        "x_final": 781742892171870.8,
+        "ok_form": false,
+        "ok_mono": false,
+        "ratio": 312697156868748.3
+      },
+      {
+        "k": 2,
+        "x0": 4.5,
+        "x_final": 6.0788327295284625e+19,
+        "ok_form": true,
+        "ok_mono": true,
+        "ratio": 1.3508517176729917e+19
+      },
+      {
+        "k": 3,
+        "x0": 6.5,
+        "x_final": 8.510365821339851e+19,
+        "ok_form": true,
+        "ok_mono": true,
+        "ratio": 1.3092870494369001e+19
+      },
+      {
+        "k": 4,
+        "x0": 8.5,
+        "x_final": 2345228676515613.0,
+        "ok_form": false,
+        "ok_mono": false,
+        "ratio": 275909256060660.34
+      },
+      {
+        "k": 10,
+        "x0": 20.5,
+        "x_final": 2.5531097464019553e+20,
+        "ok_form": true,
+        "ok_mono": true,
+        "ratio": 1.2454193884887587e+19
+      },
+      {
+        "k": 100,
+        "x0": 200.5,
+        "x_final": 1454910382653204.8,
+        "ok_form": false,
+        "ok_mono": false,
+        "ratio": 7256410886050.896
+      },
+      {
+        "k": 1000,
+        "x0": 2000.5,
+        "x_final": 402332182931047.9,
+        "ok_form": false,
+        "ok_mono": false,
+        "ratio": 201115812512.39584
+      }
+    ]
+  },
+  "odd_dot5_empirical": {
+    "n": 200,
+    "frac_bounded_proxy": 0.705,
+    "examples": [
+      {
+        "x0": 1.5,
+        "x_final": 1.9718432426452637,
+        "max": 3.9436864852905273,
+        "min": 0.75,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 3.5,
+        "x_final": 3.9718432426452637,
+        "max": 3.9718432426452637,
+        "min": 0.875,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 5.5,
+        "x_final": 87.97682571411133,
+        "max": 2151.4140625,
+        "min": 2.75,
+        "bounded_proxy": false
+      },
+      {
+        "x0": 7.5,
+        "x_final": 0.995307207107544,
+        "max": 7.5,
+        "min": 0.9375,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 9.5,
+        "x_final": 0.995307207107544,
+        "max": 15.25,
+        "min": 0.953125,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 11.5,
+        "x_final": 0.995307207107544,
+        "max": 15.4375,
+        "min": 0.96484375,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 13.5,
+        "x_final": 0.9968714714050293,
+        "max": 99.625,
+        "min": 0.9968714714050293,
+        "bounded_proxy": true
+      },
+      {
+        "x0": 15.5,
+        "x_final": 1.995307207107544,
+        "max": 15.5,
+        "min": 0.96875,
+        "bounded_proxy": true
+      }
+    ]
+  },
+  "claim_100_percent": {
+    "even_dot5_to_infinity": true,
+    "condition": "x0=2k+0.5, regla floor par \u2192 3x+1, k\u22650",
+    "odd_dot5_to_infinity": false,
+    "all_inverted_to_infinity": false,
+    "original_always_421": "conjecture_only"
+  }
+}

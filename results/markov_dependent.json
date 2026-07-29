@@ -1,0 +1,257 @@
+{
+  "definition": {
+    "state": "X_n",
+    "kernel": "P(X_{n+1}=y | X_n=x) = 1 if y=f(x) else 0",
+    "f_inverted": "even last digit / parity \u2192 3x+1; odd \u2192 x/2",
+    "markov_property": "P(X_{n+1}|X_n,...,X_0)=P(X_{n+1}|X_n)"
+  },
+  "why_not_independent": "Independencia total \u21d2 P(X_{n+1}|X_n)=P(X_{n+1}): no hay f, no hay trayectorias, el modelo pierde su raz\u00f3n de ser.",
+  "verification": {
+    "inverted": {
+      "inverted": true,
+      "n_states_visited": 1055,
+      "n_states_unique_successor": 1055,
+      "markov_deterministic_ok": true,
+      "multi_successor_violations": {},
+      "note": "Si multi_successor vac\u00edo: P(X_{n+1}|X_n)=\u03b4_{f(X_n)} y no depende del camino previo."
+    },
+    "original": {
+      "inverted": false,
+      "n_states_visited": 1040,
+      "n_states_unique_successor": 1040,
+      "markov_deterministic_ok": true,
+      "multi_successor_violations": {},
+      "note": "Si multi_successor vac\u00edo: P(X_{n+1}|X_n)=\u03b4_{f(X_n)} y no depende del camino previo."
+    },
+    "parity_dependence": {
+      "n_transitions": 12500,
+      "P_parity_next_given_now_under_f": {
+        "0": {
+          "0": 0.0,
+          "1": 1.0
+        },
+        "1": {
+          "0": 0.538328173374613,
+          "1": 0.46167182662538697
+        }
+      },
+      "mean_abs_dev_from_half_under_f": 0.2691640866873065,
+      "mean_abs_dev_from_half_iid": 0.007243413598255921,
+      "interpretation": "Bajo f, la paridad siguiente NO es ~0.5 condicional al presente (TV>>0). Bajo i.i.d. s\u00ed ~0.5. Por tanto las paridades NO son monedas independientes."
+    }
+  },
+  "branch_by_digit": {
+    "space": "last_digit_decides_branch",
+    "inverted": true,
+    "branch_by_digit": {
+      "0": "3n+1",
+      "1": "n/2",
+      "2": "3n+1",
+      "3": "n/2",
+      "4": "3n+1",
+      "5": "n/2",
+      "6": "3n+1",
+      "7": "n/2",
+      "8": "3n+1",
+      "9": "n/2"
+    },
+    "markov_on_full_state": "X_{n+1}=f(X_n) exacto en el valor completo"
+  },
+  "sample_edges_0_30": {
+    "edges": [
+      {
+        "from": 0,
+        "to": 1,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 1,
+        "to": 0,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 2,
+        "to": 7,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 3,
+        "to": 1,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 4,
+        "to": 13,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 5,
+        "to": 2,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 6,
+        "to": 19,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 7,
+        "to": 3,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 8,
+        "to": 25,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 9,
+        "to": 4,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 10,
+        "to": 31,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 11,
+        "to": 5,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 12,
+        "to": 37,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 13,
+        "to": 6,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 14,
+        "to": 43,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 15,
+        "to": 7,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 16,
+        "to": 49,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 17,
+        "to": 8,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 18,
+        "to": 55,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 19,
+        "to": 9,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 20,
+        "to": 61,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 21,
+        "to": 10,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 22,
+        "to": 67,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 23,
+        "to": 11,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 24,
+        "to": 73,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 25,
+        "to": 12,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 26,
+        "to": 79,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 27,
+        "to": 13,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 28,
+        "to": 85,
+        "prob": 1.0,
+        "branch": "3n+1"
+      },
+      {
+        "from": 29,
+        "to": 14,
+        "prob": 1.0,
+        "branch": "n/2"
+      },
+      {
+        "from": 30,
+        "to": 91,
+        "prob": 1.0,
+        "branch": "3n+1"
+      }
+    ],
+    "deterministic": true
+  },
+  "conclusions_es": [
+    "La Collatz Invertida es una cadena de Markov determinista: un solo sucesor con probabilidad 1.",
+    "El futuro depende del presente; el pasado remoto no aporta una vez conocido X_n.",
+    "Las paridades sucesivas NO son monedas i.i.d.; el ~50% global es promedio sobre semillas, no independencia paso a paso.",
+    "Si los eventos fueran totalmente independientes, no existir\u00eda relaci\u00f3n din\u00e1mica con el pasado ni con el presente v\u00eda f."
+  ]
+}
