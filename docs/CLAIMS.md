@@ -12,3 +12,6 @@
 | \(x_0=2k+\frac12\) under floor-even \(\to 3x+1\) diverges | Theorem (this repo) |
 | \(g\) explores more than \(f\) on the discrete E/S/H/product monitors here | Empirical |
 | Continuous manifolds carry a natural parity for Collatz | Not claimed |
+| Discrete flux \(=-\kappa\nabla\varphi\) factors under DFT for constant \(\kappa\) (circular) | Standard convolution theorem |
+| Same flux form on cell fields \(\varphi^E,\varphi^S,\varphi^H\) | Construction (this repo) |
+| \(f\) or \(g\) is a Fourier/Ohm law | Not claimed |

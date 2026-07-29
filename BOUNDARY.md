@@ -8,6 +8,7 @@
 - The Markov property for the deterministic iteration \(X_{n+1}=g(X_n)\).
 - A theorem for the family \(x_0=2k+\frac12\) under the floor-parity rule \(3x+1\) when the integer part is even.
 - Pedagogy: binary plots, elementary cellular automata, train diagrams.
+- The discrete Fourier/Ohm product on scalar fields defined on the cell line (constant \(\kappa\)).
 
 ## Out of scope
 
@@ -15,6 +16,7 @@
 - A claim that every inverted integer orbit diverges (counterexamples: finite cycles).
 - A canonical notion of parity on a smooth Riemannian manifold without discretisation.
 - Deriving arithmetic divergence from Euclid’s postulates alone.
+- Identifying \(f\) or \(g\) with linear heat or current transport.
 - Any financial application or investment claim.
 - Quantum computational advantage; the QFT used here is a classical unitary matrix of size \(2^n\).
 

@@ -10,4 +10,4 @@ tends to **explore more** of the state space than the normal Collatz map \(f\). 
 
 This does **not** mean that every inverted orbit diverges. Finite cycles exist. It also does not settle the classical Collatz conjecture for \(f\).
 
-Related snapshots: `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `summary_reproduced.json`.
+Related snapshots: `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `constitutive_planes.json`, `summary_reproduced.json`.

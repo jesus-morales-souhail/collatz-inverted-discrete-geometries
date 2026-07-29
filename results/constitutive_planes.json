@@ -1,0 +1,42 @@
+{
+  "sin_test_dft_identity_err": 0.11920853187558485,
+  "compare_f_g": {
+    "n0": 10,
+    "steps": 64,
+    "constant_kappa": 1.0,
+    "dft_identity_err_f_E": 0.33015761889618656,
+    "dft_identity_err_g_E": 0.30653614658606665,
+    "flux_energy_const_f": {
+      "E_euclidean": 1706.309279835379,
+      "S_spherical": 31808.000000000007,
+      "H_hyperbolic": 1706.309279835379,
+      "cell_base": 4032.0
+    },
+    "flux_energy_const_g": {
+      "E_euclidean": 1979.4157103366517,
+      "S_spherical": 53696.0,
+      "H_hyperbolic": 3218.259454309545,
+      "cell_base": 4032.0
+    },
+    "flux_energy_branch_f": {
+      "E_euclidean": 9967.191801648385,
+      "S_spherical": 171472.0,
+      "H_hyperbolic": 9967.191801648385,
+      "cell_base": 12208.0
+    },
+    "flux_energy_branch_g": {
+      "E_euclidean": 8935.9696958215,
+      "S_spherical": 276624.0,
+      "H_hyperbolic": 15091.254311897834,
+      "cell_base": 17808.0
+    },
+    "structure": {
+      "continuous": "q=-k\u2207T , J=\u03c3E=-\u03c3\u2207V",
+      "discrete": "flux=-\u03ba (d*u)",
+      "frequency": "F{flux}_k = -\u03ba H_k F{u}_k  (\u03ba constant, circular)",
+      "on_planes": "same product on \u03c6^E, \u03c6^S, \u03c6^H, cell index",
+      "collatz": "nonlinear map supplies the field \u03c6; \u03ba may be constant or parity-dependent"
+    }
+  },
+  "note": "With constant kappa the flux is -kappa * grad(phi). Under a circular DFT this factors as -kappa * H_k * F{phi}_k. Branch-dependent kappa is spatial Hadamard multiplication. Maps f and g only supply the fields."
+}

@@ -80,6 +80,30 @@ python scripts/fourier_qft_crack.py
 
 ---
 
+## Constitutive product on cell fields
+
+The linear constitutive forms of heat conduction and electrical conduction,
+
+\[
+q=-k\nabla T,\qquad J=\sigma E=-\sigma\nabla V,
+\]
+
+share the same discrete skeleton on a 1D grid: \(\mathrm{flux}=-\kappa\,(d*u)\). With constant \(\kappa\) and a circular embedding the DFT factors this as
+
+\[
+F\{\mathrm{flux}\}_k=-\kappa\,H_k\,F\{u\}_k,\qquad H_k=\frac{e^{2\pi i k/N}-1}{\Delta x}.
+\]
+
+Orbits under \(f\) and \(g\) define scalar fields on the cell line (Euclidean log, modular value, level-weighted log, and the cell index). The same flux law applies to each field. The maps themselves are not claimed to be Ohm or Fourier laws. If \(\kappa\) depends on parity, the product becomes Hadamard in space and is no longer a single factor \(H_k\) in frequency.
+
+```bash
+python scripts/constitutive_planes.py
+```
+
+Figures: `figures/constitutive/`. Short note: [`results/CONSTITUTIVE_PLANES.md`](results/CONSTITUTIVE_PLANES.md).
+
+---
+
 ## Setup
 
 ```bash
@@ -98,6 +122,7 @@ python scripts/markov_dependent.py
 python scripts/discrete_geometry_ca.py
 python scripts/two_maps_euclidean_spherical.py
 python scripts/fourier_qft_crack.py
+python scripts/constitutive_planes.py
 ```
 
 ---
@@ -105,7 +130,7 @@ python scripts/fourier_qft_crack.py
 ## Layout
 
 ```
-src/        maps, Markov checks, discrete geometries, Fourier/QFT helpers
+src/        maps, geometries, Fourier helpers, constitutive flux
 scripts/    reproducible numerics and figures
 tests/      small tests of the maps and theorems
 results/    JSON and short notes from runs
