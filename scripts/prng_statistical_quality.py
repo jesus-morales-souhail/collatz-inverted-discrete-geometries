@@ -156,7 +156,7 @@ def main() -> int:
         "Battery (α=0.01): monobit, block freq, runs, serial 2/3,\n"
         "poker m=4, autocorr lags 1/8/32\n"
         f"Mean pass rate  f={mean_pass_f:.2f}   g={mean_pass_g:.2f}\n\n"
-        "Planes: parity on Z → LSBs → Z/NZ → growth → Z²/Z³ product → log-floor\n"
+        "Planes: parity on Z → LSBs → Z/NZ → growth → product Z2, Z3 → log-floor\n"
         "Not NIST/TestU01/PractRand full suite. No crypto claim.",
         ha="center", va="center", fontsize=10, family="monospace",
         bbox=dict(boxstyle="round", facecolor="#f8f9fa", edgecolor="#495057", lw=1.5),

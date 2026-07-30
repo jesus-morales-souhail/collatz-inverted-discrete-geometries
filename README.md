@@ -120,7 +120,7 @@ Figures: `figures/constitutive/`. Short note: [`results/CONSTITUTIVE_PLANES.md`]
 
 ## PRNG statistical quality on lattice planes
 
-Bitstreams are taken from orbits under $f$ and $g$ on a sequence of lattice planes: parity on $\mathbb{Z}$, LSBs of $X_t$, words on the ring $\mathbb{Z}/N\mathbb{Z}$, growth bits, product coordinates in $\mathbb{Z}^2$ and $\mathbb{Z}^3$, and LSBs of $\lfloor\log_2(1+|X|)\rfloor$.
+Bitstreams are taken from orbits under $f$ and $g$ on a sequence of lattice planes: parity on $\mathbb{Z}$, LSBs of $X_t$, words on the ring $\mathbb{Z}/N\mathbb{Z}$, growth bits, product coordinates in $\mathbb{Z}^{2}$ and $\mathbb{Z}^{3}$, and LSBs of $\lfloor\log_2(1+|X|)\rfloor$.
 
 A self-contained battery inspired by NIST SP 800-22 (monobit, block frequency, runs, serial, poker, autocorrelation) is run at $\alpha=0.01$. This is **not** a full NIST, TestU01 or PractRand campaign, and **no** cryptographic suitability is claimed. Chaos-map generators often fail serious batteries; the expected scientific outcome is mixed or negative.
 

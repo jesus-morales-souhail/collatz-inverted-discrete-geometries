@@ -13,7 +13,7 @@ tends to **explore more** of the state space than the normal Collatz map $f$. Th
 
 This does **not** mean that every inverted orbit diverges. Finite cycles exist. It also does not settle the classical Collatz conjecture for $f$.
 
-Bitstreams extracted from $f$ and $g$ on lattice planes (parity, LSBs, $\mathbb{Z}/N\mathbb{Z}$, growth, product $\mathbb{Z}^2$/$\mathbb{Z}^3$, log-floor) mostly **fail** a self-contained statistical battery at $\alpha=0.01$. That is a negative / mixed result, consistent with the usual fate of chaos-map PRNG candidates. It is not a cryptographic evaluation and not a full NIST/TestU01/PractRand campaign.
+Bitstreams extracted from $f$ and $g$ on lattice planes (parity, LSBs, $\mathbb{Z}/N\mathbb{Z}$, growth, product lattices $\mathbb{Z}^{2}$ and $\mathbb{Z}^{3}$, log-floor) mostly **fail** a self-contained statistical battery at $\alpha=0.01$. That is a negative / mixed result, consistent with the usual fate of chaos-map PRNG candidates. It is not a cryptographic evaluation and not a full NIST/TestU01/PractRand campaign.
 
 Table of attractor vs coverage checks: [`CONVERGENCE_VS_EXPLORATION.md`](CONVERGENCE_VS_EXPLORATION.md).
 

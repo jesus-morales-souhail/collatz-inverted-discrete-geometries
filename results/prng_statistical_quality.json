@@ -113,8 +113,8 @@
     "S_mod256_low8": "ring lattice Z/256Z, 8-bit word",
     "S_mod64_low6": "ring lattice Z/64Z",
     "H_growth": "growth direction bit (tree-level proxy)",
-    "Z2_parity_x_mod": "product lattice Z^2 bits",
-    "Z3_parity_mod_growth": "product lattice Z^3 bits",
+    "Z2_parity_x_mod": "product lattice $\\mathbb{Z}^{2}$ bits",
+    "Z3_parity_mod_growth": "product lattice $\\mathbb{Z}^{3}$ bits",
     "log2_floor_lsb4": "scale coordinate floor(log2(1+X)) LSBs",
     "delta_parity": "parity of absolute step size"
   },

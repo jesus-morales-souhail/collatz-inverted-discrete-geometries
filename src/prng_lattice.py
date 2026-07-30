@@ -10,8 +10,8 @@ Lattice planes (dimensions added one by one):
   1D  LSB stream of X_t
   S   low bits of X_t mod N  (ring lattice Z/NZ)
   H   sign-of-growth bits along the orbit
-  Z^2 product of (parity, mod-2 of modular value)
-  Z^3 product + growth bit
+  Z2 product of (parity, mod-2 of modular value)
+  Z3 product + growth bit
   log-floor LSBs of log2(1+X)
 
 Maps f and g are controls of each other. Expected outcome for chaos-map PRNGs
@@ -82,7 +82,7 @@ def bits_growth(orbit: np.ndarray) -> np.ndarray:
 
 def bits_product_z2(orbit: np.ndarray, N: int = 64) -> np.ndarray:
     """
-    Z^2 lattice coordinates from (parity, (X mod N) mod 2), interleaved.
+    Product-lattice Z2 coordinates from (parity, (X mod N) mod 2), interleaved.
     """
     p = bits_parity(orbit)
     s = ((orbit.astype(np.int64) % int(N)) & 1).astype(np.uint8)
@@ -91,7 +91,7 @@ def bits_product_z2(orbit: np.ndarray, N: int = 64) -> np.ndarray:
 
 def bits_product_z3(orbit: np.ndarray, N: int = 64) -> np.ndarray:
     """
-    Z^3 product: parity, modular LSB, growth bit (growth padded with 0 at end).
+    Product-lattice Z3: parity, modular LSB, growth bit (growth padded with 0 at end).
     """
     p = bits_parity(orbit)
     s = ((orbit.astype(np.int64) % int(N)) & 1).astype(np.uint8)
@@ -533,8 +533,8 @@ def compare_f_g_prng(
             "S_mod256_low8": "ring lattice Z/256Z, 8-bit word",
             "S_mod64_low6": "ring lattice Z/64Z",
             "H_growth": "growth direction bit (tree-level proxy)",
-            "Z2_parity_x_mod": "product lattice Z^2 bits",
-            "Z3_parity_mod_growth": "product lattice Z^3 bits",
+            "Z2_parity_x_mod": "product lattice $\\mathbb{Z}^{2}$ bits",
+            "Z3_parity_mod_growth": "product lattice $\\mathbb{Z}^{3}$ bits",
             "log2_floor_lsb4": "scale coordinate floor(log2(1+X)) LSBs",
             "delta_parity": "parity of absolute step size",
         },
