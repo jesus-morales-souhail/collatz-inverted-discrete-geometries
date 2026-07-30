@@ -20,3 +20,5 @@
 | Full NIST / TestU01 / PractRand certification | Not claimed |
 | Log-orbit $Y_t=\log(1+|X_t|)$ has negative drift under $f$ on average | Heuristic (Lagarias-type); empirical diagnostics only |
 | Fitted OU SDE, skew-product RDS, PDMP or MSM for these maps | Not claimed |
+| $f$ concentrates on 4-2-1 in tested ranges; $g$ visits 1 less on $\mathbb{Z}/N\mathbb{Z}$ | Empirical (see `CONVERGENCE_VS_EXPLORATION.md`) |
+| Short-horizon growth under $g$ implies permanent escape to $\infty$ | False (cycles; growth fraction falls with horizon) |

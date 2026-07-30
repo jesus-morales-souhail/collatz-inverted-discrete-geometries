@@ -12,6 +12,7 @@ I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, sph
 | [`BOUNDARY.md`](BOUNDARY.md) | limits of the claims |
 | [`docs/CLAIMS.md`](docs/CLAIMS.md) | claim table |
 | [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion |
+| [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md) | attractor vs coverage on the monitors |
 
 ---
 
@@ -44,6 +45,12 @@ $g$ is **not** claimed to send every orbit to $+\infty$. Cycles exist (for examp
 ### Exploration under $g$ versus $f$
 
 On $\mathbb{Z}$, on $\mathbb{Z}/N\mathbb{Z}$, on a discrete hyperbolic tree (value + level), and on a product of path monitors, $g$ tends to explore more of the state space than $f$: less concentration on $1$ on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts.
+
+Table of checks: [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md).
+
+```bash
+python scripts/convergence_vs_exploration.py
+```
 
 ### Markov structure
 
@@ -149,6 +156,7 @@ python scripts/two_maps_euclidean_spherical.py
 python scripts/fourier_qft_crack.py
 python scripts/constitutive_planes.py
 python scripts/prng_statistical_quality.py
+python scripts/convergence_vs_exploration.py
 ```
 
 ---

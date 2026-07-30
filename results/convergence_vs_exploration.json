@@ -1,0 +1,68 @@
+{
+  "state_variable": "X_t = n in Z_>=0 (one integer)",
+  "maps": {
+    "f": "even->n/2, odd->3n+1",
+    "g": "even->3n+1, odd->n/2"
+  },
+  "euclidean": {
+    "frac_reach_421_f": 1.0,
+    "frac_end_near_attractor_f": 0.715,
+    "frac_end_near_attractor_g": 0.385,
+    "frac_visit_1_or_421_f": 0.74,
+    "frac_visit_1_or_421_g": 0.385,
+    "inverted_frac_x10_gt_x0": 0.49965,
+    "inverted_frac_x100_gt_x0": 0.0155,
+    "inverted_frac_hit_cycle_within_200": 1.0
+  },
+  "spherical_Z_mod_N": {
+    "frac_visit_1_f": 0.984375,
+    "frac_visit_1_g": 0.4375,
+    "note": "finite space: no n->infinity"
+  },
+  "hyperbolic_product": {
+    "mean_log1p_E_f": 1.8205325629807878,
+    "mean_log1p_E_g": 2.217932482445352,
+    "mean_H_level_f": 0.3375,
+    "mean_H_level_g": 0.45
+  },
+  "spectral": {
+    "dft_tv": 0.7114929755550212,
+    "crack_probability": 0.6038456389953408
+  },
+  "prng_mean_pass_rate": {
+    "f": 0.04444444444444444,
+    "g": 0.01111111111111111,
+    "alpha": 0.01
+  },
+  "constitutive_flux_energy_n0_10": {
+    "f": {
+      "E_euclidean": 1706.309279835379,
+      "S_spherical": 31808.000000000007,
+      "H_hyperbolic": 1706.309279835379,
+      "cell_base": 4032.0
+    },
+    "g": {
+      "E_euclidean": 1979.4157103366517,
+      "S_spherical": 53696.0,
+      "H_hyperbolic": 3218.259454309545,
+      "cell_base": 4032.0
+    }
+  },
+  "log_orbit_batch": {
+    "n_seeds": 40,
+    "steps": 512,
+    "mean_dY_f": -0.0047239270188493025,
+    "mean_dY_g": -0.0029856903698592067,
+    "median_dY_f": -0.004938154632489518,
+    "median_dY_g": -0.002621999788751324,
+    "mean_reversion_b_f": -0.6085748136318896,
+    "mean_reversion_b_g": -1.2793164719070584
+  },
+  "reading": {
+    "convergence": "f concentrates on the 4-2-1 cycle (global proof open)",
+    "exploration": "g covers more on the monitors here; not universal divergence",
+    "cycles_g": "finite cycles exist; many seeds hit a cycle within 200 steps in the sample",
+    "compact": "on Z/NZ every orbit is eventually periodic",
+    "prng": "bitstreams from both maps mostly fail the self-contained battery"
+  }
+}
