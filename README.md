@@ -111,6 +111,24 @@ Figures: `figures/constitutive/`. Short note: [`results/CONSTITUTIVE_PLANES.md`]
 
 ---
 
+## PRNG statistical quality on lattice planes
+
+Bitstreams are taken from orbits under $f$ and $g$ on a sequence of lattice planes: parity on $\mathbb{Z}$, LSBs of $X_t$, words on the ring $\mathbb{Z}/N\mathbb{Z}$, growth bits, product coordinates in $\mathbb{Z}^2$ and $\mathbb{Z}^3$, and LSBs of $\lfloor\log_2(1+|X|)\rfloor$.
+
+A self-contained battery inspired by NIST SP 800-22 (monobit, block frequency, runs, serial, poker, autocorrelation) is run at $\alpha=0.01$. This is **not** a full NIST, TestU01 or PractRand campaign, and **no** cryptographic suitability is claimed. Chaos-map generators often fail serious batteries; the expected scientific outcome is mixed or negative.
+
+On the sample used in this repository the mean pass rate is low for both maps (see [`results/PRNG_STATISTICAL_QUALITY.md`](results/PRNG_STATISTICAL_QUALITY.md)).
+
+The same script records a log-orbit diagnostic $Y_t=\log(1+|X_t|)$: empirical drift $\mathbb{E}[\Delta Y]$ and OLS slope $b$ in $\Delta Y=a+bY$. That is the honest contact with OU-type language (mean reversion as a regression coefficient), not an external coupling of unrelated processes. Skew products, PDMPs and MSMs are named only as frameworks; they are not fitted here.
+
+```bash
+python scripts/prng_statistical_quality.py
+```
+
+Figures: `figures/prng/`.
+
+---
+
 ## Setup
 
 ```bash
@@ -130,6 +148,7 @@ python scripts/discrete_geometry_ca.py
 python scripts/two_maps_euclidean_spherical.py
 python scripts/fourier_qft_crack.py
 python scripts/constitutive_planes.py
+python scripts/prng_statistical_quality.py
 ```
 
 ---
@@ -137,7 +156,7 @@ python scripts/constitutive_planes.py
 ## Layout
 
 ```
-src/        maps, geometries, Fourier helpers, constitutive flux
+src/        maps, geometries, Fourier, constitutive, PRNG lattice bits
 scripts/    reproducible numerics and figures
 tests/      small tests of the maps and theorems
 results/    JSON and short notes from runs

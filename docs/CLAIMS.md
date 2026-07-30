@@ -15,3 +15,8 @@
 | Discrete flux $=-\kappa\nabla\varphi$ factors under DFT for constant $\kappa$ (circular) | Standard convolution theorem |
 | Same flux form on cell fields $\varphi^E,\varphi^S,\varphi^H$ | Construction (this repo) |
 | $f$ or $g$ is a Fourier/Ohm law | Not claimed |
+| Bitstreams from $f$/$g$ on lattice planes pass a self-contained statistical battery | Empirical: mostly fail in the sample here |
+| $f$ or $g$ is cryptographically secure as a PRNG | Not claimed |
+| Full NIST / TestU01 / PractRand certification | Not claimed |
+| Log-orbit $Y_t=\log(1+|X_t|)$ has negative drift under $f$ on average | Heuristic (Lagarias-type); empirical diagnostics only |
+| Fitted OU SDE, skew-product RDS, PDMP or MSM for these maps | Not claimed |

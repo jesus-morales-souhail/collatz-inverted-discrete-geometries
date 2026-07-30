@@ -9,6 +9,8 @@
 - A theorem for the family $x_0=2k+\frac{1}{2}$ under the floor-parity rule $3x+1$ when the integer part is even.
 - Pedagogy: binary plots, elementary cellular automata, train diagrams.
 - The discrete Fourier/Ohm product on scalar fields defined on the cell line (constant $\kappa$).
+- Empirical statistical tests of bitstreams from $f$ and $g$ on lattice planes (self-contained battery).
+- Log-orbit drift / mean-reversion diagnostics on $Y_t=\log(1+|X_t|)$.
 
 ## Out of scope
 
@@ -17,6 +19,9 @@
 - A canonical notion of parity on a smooth Riemannian manifold without discretisation.
 - Deriving arithmetic divergence from Euclid’s postulates alone.
 - Identifying $f$ or $g$ with linear heat or current transport.
+- Cryptographic suitability of $f$ or $g$ as PRNGs; full NIST SP 800-22, TestU01 or PractRand certification.
+- Fitted skew-product RDS, PDMPs, or Markov state models of continuous physical data.
+- Coupling Collatz maps to unrelated continuous processes by shared vocabulary alone.
 - Any financial application or investment claim.
 - Quantum computational advantage; the QFT used here is a classical unitary matrix of size $2^n$.
 
@@ -29,3 +34,5 @@
 | Even half-integers $\to\infty$ under the stated rule | Theorem for that family |
 | All orbits of $g$ go to $\infty$ | False |
 | Same statements on arbitrary continuous manifolds | Not defined without extra structure |
+| Bitstreams from $f$/$g$ pass PRNG batteries | Not claimed; sample here mostly fails |
+| $f$ or $g$ is a CSPRNG | Not claimed |

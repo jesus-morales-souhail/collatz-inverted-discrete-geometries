@@ -1,0 +1,1197 @@
+{
+  "alpha": 0.01,
+  "n_seeds": 48,
+  "steps": 2048,
+  "battery": [
+    "monobit",
+    "block_frequency",
+    "runs",
+    "serial_2bit",
+    "serial_3bit",
+    "poker_m4",
+    "autocorr_lag1",
+    "autocorr_lag8",
+    "autocorr_lag32"
+  ],
+  "note": "Self-contained subset inspired by NIST SP 800-22. Not a full NIST, TestU01 or PractRand run. No cryptographic suitability is claimed. Chaos-map PRNGs often fail serious batteries; mixed/negative results are the expected scientific outcome.",
+  "pass_rate_table": [
+    {
+      "plane": "E_parity_Z",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 98352,
+      "n_bits_g": 98352,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "E_lsb1",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 98352,
+      "n_bits_g": 98352,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "E_lsb4",
+      "pass_rate_f": 0.3333333333333333,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 393408,
+      "n_bits_g": 393408,
+      "n_fail_f": 6,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "S_mod256_low8",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 786816,
+      "n_bits_g": 786816,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "S_mod64_low6",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 590112,
+      "n_bits_g": 590112,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "H_growth",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 98304,
+      "n_bits_g": 98304,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "Z2_parity_x_mod",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 196704,
+      "n_bits_g": 196704,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "Z3_parity_mod_growth",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.1111111111111111,
+      "n_bits_f": 295056,
+      "n_bits_g": 295056,
+      "n_fail_f": 9,
+      "n_fail_g": 8
+    },
+    {
+      "plane": "log2_floor_lsb4",
+      "pass_rate_f": 0.1111111111111111,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 393408,
+      "n_bits_g": 393408,
+      "n_fail_f": 8,
+      "n_fail_g": 9
+    },
+    {
+      "plane": "delta_parity",
+      "pass_rate_f": 0.0,
+      "pass_rate_g": 0.0,
+      "n_bits_f": 98304,
+      "n_bits_g": 98304,
+      "n_fail_f": 9,
+      "n_fail_g": 9
+    }
+  ],
+  "lattice_planes": {
+    "E_parity_Z": "1D lattice Z, parity coordinate",
+    "E_lsb1": "1D, LSB of X_t",
+    "E_lsb4": "1D, 4 LSBs of X_t (more dimensions from same integer)",
+    "S_mod256_low8": "ring lattice Z/256Z, 8-bit word",
+    "S_mod64_low6": "ring lattice Z/64Z",
+    "H_growth": "growth direction bit (tree-level proxy)",
+    "Z2_parity_x_mod": "product lattice Z^2 bits",
+    "Z3_parity_mod_growth": "product lattice Z^3 bits",
+    "log2_floor_lsb4": "scale coordinate floor(log2(1+X)) LSBs",
+    "delta_parity": "parity of absolute step size"
+  },
+  "framework_pointers": {
+    "skew_product": "Arnold RDS: (x,y) |-> (T x, S_x(y)). Here the base can be parity/time and the fibre the integer state; the PRNG stream is an observation of the fibre, not a claim of continuous RDS.",
+    "pdmp": "Davis PDMP: deterministic flow between random jumps. Not fitted here; only the discrete jump map is studied.",
+    "msm": "Markov state models coarse-grain continuous trajectories into discrete states. Applicable when states come from real data (e.g. molecular MD). Not constructed in this repository.",
+    "log_diffusion": "Contact of OU-type modelling with Collatz-type maps is the log-orbit as a discrete path: ask whether empirical drift and reversion_b look mean-reverting. Not an external coupling of unrelated processes."
+  },
+  "theoretical_parity": {
+    "crude_one_step_mean_log_f": 0.20273255405408225,
+    "crude_one_step_same_for_g_if_fair_parity": true,
+    "comment": "Under fair independent parity the one-step log factors of f and g are equal in law after swapping labels. The empirical difference comes from parity dependence and from multi-divisions by 2; under g even always maps to odd (3n+1 odd), so parities are not iid.",
+    "reference": "Lagarias surveys on the 3x+1 problem; parity is not an iid coin under iteration."
+  },
+  "log_drift_seed0_f": {
+    "n": 2049,
+    "mean_Y": 1.136374446973597,
+    "mean_dY": 0.0001089568121651414,
+    "var_dY": 0.4221899471007508,
+    "std_dY": 0.6497614539973503,
+    "intercept_a": 1.6747956035212546,
+    "reversion_b": -1.4740098475344492,
+    "note": "Heuristic: random-parity model gives negative drift for f (Lagarias surveys). g swaps branches so forced negative drift is lost. reversion_b < 0 would mimic OU mean reversion; not assumed."
+  },
+  "log_drift_seed0_g": {
+    "n": 2049,
+    "mean_Y": 0.3470810186698408,
+    "mean_dY": -0.0006769015435155717,
+    "var_dY": 0.4804525557225017,
+    "std_dY": 0.6931468500415346,
+    "intercept_a": 0.6917986400649399,
+    "reversion_b": -1.994167201814811,
+    "note": "Heuristic: random-parity model gives negative drift for f (Lagarias surveys). g swaps branches so forced negative drift is lost. reversion_b < 0 would mimic OU mean reversion; not assumed."
+  },
+  "mean_pass_rate_f": 0.04444444444444444,
+  "mean_pass_rate_g": 0.01111111111111111,
+  "per_plane_detail": {
+    "E_parity_Z": {
+      "f": {
+        "n_bits": 98352,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 98352,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "E_lsb1": {
+      "f": {
+        "n_bits": 98352,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 98352,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "E_lsb4": {
+      "f": {
+        "n_bits": 393408,
+        "pass_rate": 0.3333333333333333,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.7558805369685553,
+            "pass": true
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.1459340039100462,
+            "pass": true
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.3484990711472422,
+            "pass": true
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 393408,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 4.37230933e-316,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "S_mod256_low8": {
+      "f": {
+        "n_bits": 786816,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 786816,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "S_mod64_low6": {
+      "f": {
+        "n_bits": 590112,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 590112,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "H_growth": {
+      "f": {
+        "n_bits": 98304,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 98304,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "Z2_parity_x_mod": {
+      "f": {
+        "n_bits": 196704,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 196704,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "Z3_parity_mod_growth": {
+      "f": {
+        "n_bits": 295056,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 295056,
+        "pass_rate": 0.1111111111111111,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 8.161038558941006e-126,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 1.0,
+            "pass": true
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "log2_floor_lsb4": {
+      "f": {
+        "n_bits": 393408,
+        "pass_rate": 0.1111111111111111,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.07919769443761533,
+            "pass": true
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 393408,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    },
+    "delta_parity": {
+      "f": {
+        "n_bits": 98304,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      },
+      "g": {
+        "n_bits": 98304,
+        "pass_rate": 0.0,
+        "tests": [
+          {
+            "name": "monobit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "block_frequency",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "runs",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_2bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "serial_3bit",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "poker_m4",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag1",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag8",
+            "p_value": 0.0,
+            "pass": false
+          },
+          {
+            "name": "autocorr_lag32",
+            "p_value": 0.0,
+            "pass": false
+          }
+        ]
+      }
+    }
+  }
+}
