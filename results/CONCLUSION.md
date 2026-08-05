@@ -1,22 +1,33 @@
 # Conclusion
 
-On the discrete models used in this repository (integer line, modular ring, hyperbolic tree levels, and their product monitors), the inverted map
+## Main result: coverage residual
 
-$$
-g(n)=\begin{cases}
-3n+1 & \text{if }n\text{ is even}\\
-n/2 & \text{if }n\text{ is odd}
-\end{cases}
-$$
+The central product of this repository is **budgeted coverage**, not a proof of the Collatz conjecture.
 
-tends to **explore more** of the state space than the normal Collatz map $f$. The difference shows up in several independent checks: visit rates to $1$ on $\mathbb{Z}/N\mathbb{Z}$, growth and path monitors on non-compact components, and spectral separation after DFT/QFT of orbit signals.
+1. On the cycle $4\to 2\to 1$ under $f$, each node has a unique successor: **choice entropy $0$**.
+2. The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) **grows** with depth; mean branching temperature $T_{\mathrm{eff}}=\log(N_{d+1}/N_d)$ is **positive** in the recorded run.
+3. The residual
+   $$
+   R(D)=1-\frac{\#\{\text{covered states in the window}\}}{\#\{\text{window}\}}
+   $$
+   is the observable. At depth $D=28$ on $\{1,\ldots,8000\}$, $R\approx 0.91$ (partial coverage under budget). **$R=0$ at finite $D$ is not claimed.**
+4. Under the same forward budget, $g$ covers a **slightly larger** fraction of that integer window than $f$.
 
-This does **not** mean that every inverted orbit diverges. Finite cycles exist. It also does not settle the classical Collatz conjecture for $f$.
+Full write-up and flags: [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md).  
+Reproduce: `python scripts/coverage_residual.py`.
 
-Bitstreams extracted from $f$ and $g$ on lattice planes (parity, LSBs, $\mathbb{Z}/N\mathbb{Z}$, growth, product lattices $\mathbb{Z}^{2}$ and $\mathbb{Z}^{3}$, log-floor) mostly **fail** a self-contained statistical battery at $\alpha=0.01$. That is a negative / mixed result, consistent with the usual fate of chaos-map PRNG candidates. It is not a cryptographic evaluation and not a full NIST/TestU01/PractRand campaign.
+That is the strongest structural result here: a measurable coverage product (nucleus + generators + budget + residual) that works without solving the classical conjecture.
 
-Table of attractor vs coverage checks: [`CONVERGENCE_VS_EXPLORATION.md`](CONVERGENCE_VS_EXPLORATION.md).
+---
 
-Coverage under budget (inverse tree from $1$, residual $R(D)$, forward $f$ vs $g$): [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md). Choice entropy on the $4$-$2$-$1$ cycle is zero; the inverse tree grows with positive mean branching temperature in the sample; full coverage at finite depth is not claimed.
+## Supporting results
 
-Related snapshots: `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `constitutive_planes.json`, `prng_statistical_quality.json`, `convergence_vs_exploration.json`, `coverage_residual.json`, `summary_reproduced.json`.
+On the discrete models in this repository (integer line, modular ring, hyperbolic tree levels, product monitors), $g$ tends to explore more than $f$ in several independent checks (visits to $1$ on $\mathbb{Z}/N\mathbb{Z}$, growth proxies, spectral separation). That is empirical. Finite cycles of $g$ exist; universal divergence under $g$ is false. The classical conjecture for $f$ remains open.
+
+Bitstreams from $f$ and $g$ on lattice planes mostly **fail** a self-contained statistical battery. Broader integer coverage is not statistical randomness.
+
+Even half-integers under the stated floor rule diverge (theorem for that family only).
+
+Table: [`CONVERGENCE_VS_EXPLORATION.md`](CONVERGENCE_VS_EXPLORATION.md).
+
+Related snapshots: `coverage_residual.json`, `convergence_vs_exploration.json`, `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `constitutive_planes.json`, `prng_statistical_quality.json`, `summary_reproduced.json`.

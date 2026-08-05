@@ -1,9 +1,10 @@
 # Reading order
 
 1. [`BOUNDARY.md`](BOUNDARY.md) — what is and is not claimed.  
-2. [`docs/CLAIMS.md`](docs/CLAIMS.md) — short status table.  
-3. `python tests/test_core.py` and `python scripts/run_all_checks.py`.  
-4. [`results/CONCLUSION.md`](results/CONCLUSION.md), [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md), and [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md).  
-5. Plots under `figures/`.
+2. [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) — **main result** (budgeted residual $R(D)$).  
+3. [`results/CONCLUSION.md`](results/CONCLUSION.md).  
+4. [`docs/CLAIMS.md`](docs/CLAIMS.md).  
+5. `python tests/test_core.py`, `python scripts/coverage_residual.py`, `python scripts/run_all_checks.py`.  
+6. Other notes under `results/` and plots under `figures/`.
 
-The inverted map covers more of the monitors used here than the normal map. That is not a proof that every inverted orbit diverges. Coverage residual $R(D)$ is an observable under a fixed budget, not a proof of the classical conjecture.
+Main claim of the repo: coverage under a fixed budget (nucleus, inverse tree, residual $R$, forward $f$ vs $g$) works as a measurable product. That is not a proof of the classical Collatz conjecture and not a claim that every inverted orbit diverges.

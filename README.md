@@ -6,14 +6,16 @@ July 2026 · independent notes · not peer reviewed
 
 I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, spherical and hyperbolic geometry. Parity is a property of integers. It is not assumed to sit on a smooth manifold without an explicit discretisation.
 
+**Main result:** budgeted **coverage residual** $R(D)$ — nucleus with choice entropy $0$, inverse tree growth, forward $f$ vs $g$ under the same budget. Not a proof of the Collatz conjecture. See [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) and [`results/CONCLUSION.md`](results/CONCLUSION.md).
+
 | | |
 |:--|:--|
+| [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) | **main result** — residual $R(D)$ |
+| [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion (leads with coverage) |
 | [`START_HERE.md`](START_HERE.md) | reading order |
 | [`BOUNDARY.md`](BOUNDARY.md) | limits of the claims |
 | [`docs/CLAIMS.md`](docs/CLAIMS.md) | claim table |
-| [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion |
 | [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md) | attractor vs coverage on the monitors |
-| [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) | residual $R(D)$: inverse tree and budgeted forward coverage |
 
 ---
 
