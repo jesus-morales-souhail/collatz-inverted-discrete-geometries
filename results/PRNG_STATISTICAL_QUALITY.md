@@ -51,7 +51,7 @@ See Lagarias surveys on the $3x+1$ problem.
 
 ## Named frameworks (pointers only)
 
-- **Skew product / RDS** (Arnold): formal home of the word “product” $(x,y)\mapsto(Tx,S_x(y))$.
+- **Skew product / RDS** (Arnold): formal home of the word “product” $ (x,y)\mapsto(Tx,S_x(y))$.
 - **PDMP** (Davis 1984): deterministic flow between random jumps — not fitted here.
 - **MSM**: discrete states from continuous data (e.g. molecular trajectories) — not built here.
 - **Log diffusion**: the honest contact of OU-type language with Collatz-type maps.

@@ -98,7 +98,7 @@ On $\mathbb{Z}/N\mathbb{Z}$ every orbit stays in a finite set. There is no analo
 | Euclidean | $\mathbb{Z}^+$ | classical arithmetic; $n\to\infty$ possible |
 | Spherical | $\mathbb{Z}/N\mathbb{Z}$ | compact; no infinity |
 | Hyperbolic | value + tree level | capacity grows like $2^{\mathrm{level}}$ |
-| Product | $(x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})$ | $S$ remains in $\{0,\ldots,N-1\}$ |
+| Product | $ (x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})$ | $S$ remains in $\{0,\ldots,N-1\}$ |
 
 ---
 
