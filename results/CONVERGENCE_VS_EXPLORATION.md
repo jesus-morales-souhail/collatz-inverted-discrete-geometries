@@ -1,12 +1,18 @@
 # Convergence vs exploration
 
-State variable: one integer $X_t = n \ge 0$.
+State variable: one integer $X_t=n\ge 0$.
 
-
-f:\ \text{even}\to n/2,\ \text{odd}\to 3n+1
+$$
+f(n)=\begin{cases}
+n/2 & \text{if }n\text{ is even}\\
+3n+1 & \text{if }n\text{ is odd}
+\end{cases}
 \qquad
-g:\ \text{even}\to 3n+1,\ \text{odd}\to n/2
-
+g(n)=\begin{cases}
+3n+1 & \text{if }n\text{ is even}\\
+n/2 & \text{if }n\text{ is odd}
+\end{cases}
+$$
 
 ## What the numbers say
 

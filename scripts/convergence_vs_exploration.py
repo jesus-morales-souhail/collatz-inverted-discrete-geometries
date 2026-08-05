@@ -214,61 +214,72 @@ def main() -> int:
             return f"{x:.{nd}g}"
         return str(x)
 
-    md = f"""# Convergence vs exploration
-
-State variable: one integer $X_t = n \\ge 0$.
-
-$$
-f:\\ \\text{{even}}\\to n/2,\\ \\text{{odd}}\\to 3n+1
-\\qquad
-g:\\ \\text{{even}}\\to 3n+1,\\ \\text{{odd}}\\to n/2
-$$
-
-## What the numbers say
-
-| Check | $f$ | $g$ |
-|-------|-----|-----|
-| Reach $\\{{1,2,4\\}}$ (large sample on $\\mathbb{{Z}}^+$) | {fmt(reach_f, 4)} | not the classical attractor |
-| End near attractor proxy (fixed-step batch) | {fmt(euc_f_attr)} | {fmt(euc_g_attr)} |
-| Visit 1 or 4-2-1 (same batch) | {fmt(euc_f_vis)} | {fmt(euc_g_vis)} |
-| Visit class 1 on $\\mathbb{{Z}}/N\\mathbb{{Z}}$ | {fmt(sph_f)} | {fmt(sph_g)} |
-| Mean $\\log(1+x_E)$ (product monitor) | {fmt(logE_f)} | {fmt(logE_g)} |
-| Mean hyperbolic level (product) | {fmt(lvl_f)} | {fmt(lvl_g)} |
-| $x_{{10}}>x_0$ under $g$ | — | {fmt(h10 if h10 is not None else summary.get("inverted_frac_x10_gt_x0"))} |
-| $x_{{100}}>x_0$ under $g$ | — | {fmt(h100)} |
-| Hit a cycle within 200 steps under $g$ (sample) | — | {fmt(frac_cycle)} |
-| Mean PRNG pass rate ($\\alpha=0.01$, 9 tests) | {fmt(mean_prng_f)} | {fmt(mean_prng_g)} |
-| Spectral separability score | — | crack_probability = {fmt(crack)} (DFT TV = {fmt(dft_tv)}) |
-
-Log-orbit batch ({log_batch['n_seeds']} odd seeds, {log_batch['steps']} steps), $Y=\\log(1+|X|)$:
-
-| | mean $\\Delta Y$ | median $\\Delta Y$ | mean OLS $b$ in $\\Delta Y=a+bY$ |
-|--|-----------------|-------------------|----------------------------------|
-| $f$ | {log_batch['mean_dY_f']:.4g} | {log_batch['median_dY_f']:.4g} | {log_batch['mean_reversion_b_f']:.4g} |
-| $g$ | {log_batch['mean_dY_g']:.4g} | {log_batch['median_dY_g']:.4g} | {log_batch['mean_reversion_b_g']:.4g} |
-
-## Reading (no extra story)
-
-- On $\\mathbb{{Z}}^+$, $f$ is the map people study for the 4-2-1 attractor. In the samples here it reaches that cycle for essentially all tested seeds.
-- $g$ visits 1 less often on the ring, and the product monitors show larger log size and slightly higher tree level under the same step count.
-- That is **exploration relative to $f$ on these monitors**, not a theorem that every $g$-orbit goes to infinity. Cycles of $g$ are known; in one sample every seed hit a cycle inside 200 steps. Short-horizon growth under $g$ drops as the horizon grows (see figure 02).
-- On $\\mathbb{{Z}}/N\\mathbb{{Z}}$ there is no infinity. Orbits are finite. The question is coverage and visits to the class of 1, not escape.
-- Bitstreams from both maps fail almost all tests in the self-contained PRNG battery. Broader integer coverage is not the same as statistical randomness.
-- Under $g$, even always maps to odd ($3n+1$ is odd). Parity is not an iid coin.
-
-## Sources
-
-`summary_reproduced.json`, `discrete_geometry_ca.json`, `two_maps_euclidean_spherical.json`,
-`fourier_qft_crack.json`, `prng_statistical_quality.json`, plus the log batch above.
-
-Figures: `figures/explore/`.
-
-Reproduce:
-
-```bash
-python scripts/convergence_vs_exploration.py
-```
-"""
+    # Build markdown without f-string so "$$" is not mangled.
+    h10v = h10 if h10 is not None else summary.get("inverted_frac_x10_gt_x0")
+    lines = [
+        "# Convergence vs exploration",
+        "",
+        r"State variable: one integer $X_t=n\ge 0$.",
+        "",
+        r"$$",
+        r"f(n)=\begin{cases}",
+        r"n/2 & \text{if }n\text{ is even}\\",
+        r"3n+1 & \text{if }n\text{ is odd}",
+        r"\end{cases}",
+        r"\qquad",
+        r"g(n)=\begin{cases}",
+        r"3n+1 & \text{if }n\text{ is even}\\",
+        r"n/2 & \text{if }n\text{ is odd}",
+        r"\end{cases}",
+        r"$$",
+        "",
+        "## What the numbers say",
+        "",
+        r"| Check | $f$ | $g$ |",
+        "|-------|-----|-----|",
+        rf"| Reach $\{{1,2,4\}}$ (large sample on $\mathbb{{Z}}^+$) | {fmt(reach_f, 4)} | not the classical attractor |",
+        rf"| End near attractor proxy (fixed-step batch) | {fmt(euc_f_attr)} | {fmt(euc_g_attr)} |",
+        rf"| Visit 1 or 4-2-1 (same batch) | {fmt(euc_f_vis)} | {fmt(euc_g_vis)} |",
+        rf"| Visit class 1 on $\mathbb{{Z}}/N\mathbb{{Z}}$ | {fmt(sph_f)} | {fmt(sph_g)} |",
+        rf"| Mean $\log(1+x_E)$ (product monitor) | {fmt(logE_f)} | {fmt(logE_g)} |",
+        rf"| Mean hyperbolic level (product) | {fmt(lvl_f)} | {fmt(lvl_g)} |",
+        rf"| $x_{{10}}>x_0$ under $g$ | — | {fmt(h10v)} |",
+        rf"| $x_{{100}}>x_0$ under $g$ | — | {fmt(h100)} |",
+        rf"| Hit a cycle within 200 steps under $g$ (sample) | — | {fmt(frac_cycle)} |",
+        rf"| Mean PRNG pass rate ($\alpha=0.01$, 9 tests) | {fmt(mean_prng_f)} | {fmt(mean_prng_g)} |",
+        rf"| Spectral separability score | — | crack_probability = {fmt(crack)} (DFT TV = {fmt(dft_tv)}) |",
+        "",
+        rf"Log-orbit batch ({log_batch['n_seeds']} odd seeds, {log_batch['steps']} steps), $Y=\log(1+|X|)$:",
+        "",
+        r"| | mean $\Delta Y$ | median $\Delta Y$ | mean OLS $b$ in $\Delta Y=a+bY$ |",
+        "|--|-----------------|-------------------|----------------------------------|",
+        rf"| $f$ | {log_batch['mean_dY_f']:.4g} | {log_batch['median_dY_f']:.4g} | {log_batch['mean_reversion_b_f']:.4g} |",
+        rf"| $g$ | {log_batch['mean_dY_g']:.4g} | {log_batch['median_dY_g']:.4g} | {log_batch['mean_reversion_b_g']:.4g} |",
+        "",
+        "## Reading (no extra story)",
+        "",
+        r"- On $\mathbb{Z}^+$, $f$ is the map people study for the 4-2-1 attractor. In the samples here it reaches that cycle for essentially all tested seeds.",
+        r"- $g$ visits 1 less often on the ring, and the product monitors show larger log size and slightly higher tree level under the same step count.",
+        r"- That is **exploration relative to $f$ on these monitors**, not a theorem that every $g$-orbit goes to infinity. Cycles of $g$ are known; in one sample every seed hit a cycle inside 200 steps. Short-horizon growth under $g$ drops as the horizon grows (see figure 02).",
+        r"- On $\mathbb{Z}/N\mathbb{Z}$ there is no infinity. Orbits are finite. The question is coverage and visits to the class of 1, not escape.",
+        "- Bitstreams from both maps fail almost all tests in the self-contained PRNG battery. Broader integer coverage is not the same as statistical randomness.",
+        r"- Under $g$, even always maps to odd ($3n+1$ is odd). Parity is not an iid coin.",
+        "",
+        "## Sources",
+        "",
+        "`summary_reproduced.json`, `discrete_geometry_ca.json`, `two_maps_euclidean_spherical.json`,",
+        "`fourier_qft_crack.json`, `prng_statistical_quality.json`, plus the log batch above.",
+        "",
+        "Figures: `figures/explore/`.",
+        "",
+        "Reproduce:",
+        "",
+        "```bash",
+        "python scripts/convergence_vs_exploration.py",
+        "```",
+        "",
+    ]
+    md = "\n".join(lines)
     (RES / "CONVERGENCE_VS_EXPLORATION.md").write_text(md)
     print("wrote", RES / "CONVERGENCE_VS_EXPLORATION.md")
     print("sph visit1 f/g", sph_f, sph_g)
