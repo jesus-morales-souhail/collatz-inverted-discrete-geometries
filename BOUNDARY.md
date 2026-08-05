@@ -7,7 +7,7 @@
 - Empirical comparisons of orbits under $f$ and $g$ (growth, path lengths, spectral separation).
 - The Markov property for the deterministic iteration $X_{n+1}=g(X_n)$.
 - A theorem for the family $x_0=2k+\frac{1}{2}$ under the floor-parity rule $3x+1$ when the integer part is even.
-- Pedagogy: binary plots, elementary cellular automata, train diagrams.
+- Binary plots, elementary cellular automata, train diagrams.
 - The discrete Fourier/Ohm product on scalar fields defined on the cell line (constant $\kappa$).
 - Empirical statistical tests of bitstreams from $f$ and $g$ on lattice planes (self-contained battery).
 - Log-orbit drift / mean-reversion diagnostics on $Y_t=\log(1+|X_t|)$.

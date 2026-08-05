@@ -1,8 +1,8 @@
 # Collatz inverted vs normal on discrete geometries
 
-Jesús Morales Souhail  
-[ORCID 0009-0000-7637-1818](https://orcid.org/0009-0000-7637-1818) · [github.com/jesus-morales-souhail](https://github.com/jesus-morales-souhail)  
-July 2026 · independent notes · not peer reviewed
+Jesús Morales Souhail
+[ORCID 0009-0000-7637-1818](https://orcid.org/0009-0000-7637-1818) · [github.com/jesus-morales-souhail](https://github.com/jesus-morales-souhail)
+July 2026 · independent work
 
 I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, spherical and hyperbolic geometry. Parity is a property of integers. It is not assumed to sit on a smooth manifold without an explicit discretisation.
 
@@ -50,10 +50,10 @@ $g$ is **not** claimed to send every orbit to $+\infty$. Cycles exist (for examp
 The product is coverage under a budget, not a solution of the conjecture. The cycle $4\to 2\to 1$ has choice entropy $0$ under $f$ (one successor per node). The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) expands with depth; the residual
 
 $$
-R(D)=1-\frac{\#\{\text{covered states in the window}\}}{\#\{\text{window}\}}
+R(D)=1-\frac{N_{\mathrm{cov}}}{N_{\mathrm{win}}}
 $$
 
-is the observable. Forward orbits of $f$ and $g$ are compared under the same seed set and step count. Full coverage ($R=0$ at finite $D$) is not claimed.
+Here $N_{\mathrm{cov}}$ is the number of covered states in the window and $N_{\mathrm{win}}$ is the window size. $R$ is the observable. Forward orbits of $f$ and $g$ are compared under the same seed set and step count. Full coverage ($R=0$ at finite $D$) is not claimed.
 
 In the recorded run: mean $T_{\mathrm{eff}}>0$, inverse $R\approx 0.91$ on $\{1,\ldots,8000\}$ at depth $28$, and $g$ covers slightly more of that window than $f$ under the same forward budget. Core checks hold; see [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md).
 

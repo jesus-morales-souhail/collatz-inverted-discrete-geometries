@@ -4,7 +4,7 @@ Some checks use last digits (or scaled integers) taken from public price series 
 
 Across the series stored in the corresponding JSON:
 
-- Growth fractions under $g$ exceed those under $f$.  
+- Growth fractions under $g$ exceed those under $f$.
 - Path-length ratios (inverted over normal) in Euclidean, spherical and hyperbolic monitors are typically larger than one.
 
 No statement is made about financial use of these series.

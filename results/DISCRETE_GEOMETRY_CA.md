@@ -6,10 +6,10 @@ Parity is defined on integers (or on a stated discretisation). The models below 
 
 ## Models
 
-- Euclidean: $\mathbb{Z}^+$.  
-- Spherical: $\mathbb{Z}/N\mathbb{Z}$ (no infinity).  
-- Hyperbolic: pair (value, tree level).  
-- Product: $(x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})$.  
+- Euclidean: $\mathbb{Z}^+$.
+- Spherical: $\mathbb{Z}/N\mathbb{Z}$ (no infinity).
+- Hyperbolic: pair (value, tree level).
+- Product: $(x_E,x_S,x_H^{\mathrm{val}},x_H^{\mathrm{lvl}})$.
 - Elementary cellular automata: Wolfram rules 30, 90, 110, 184.
 
 ## Observations
