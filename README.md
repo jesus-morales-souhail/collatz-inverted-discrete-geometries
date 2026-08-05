@@ -186,12 +186,12 @@ python scripts/coverage_residual.py
 ## Layout
 
 ```
-src/        maps, geometries, Fourier, constitutive, PRNG lattice bits
-scripts/    reproducible numerics and figures
-tests/      small tests of the maps and theorems
-results/    JSON and short notes from runs
-figures/    plots and a short train animation
-docs/       claim table
+src/ maps, geometries, Fourier, constitutive, PRNG lattice bits
+scripts/ reproducible numerics and figures
+tests/ small tests of the maps and theorems
+results/ JSON and short notes from runs
+figures/ plots and a short train animation
+docs/ claim table
 ```
 
 ---

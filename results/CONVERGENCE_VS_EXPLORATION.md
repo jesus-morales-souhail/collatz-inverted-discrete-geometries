@@ -2,11 +2,11 @@
 
 State variable: one integer $X_t = n \ge 0$.
 
-$$
+
 f:\ \text{even}\to n/2,\ \text{odd}\to 3n+1
 \qquad
 g:\ \text{even}\to 3n+1,\ \text{odd}\to n/2
-$$
+
 
 ## What the numbers say
 

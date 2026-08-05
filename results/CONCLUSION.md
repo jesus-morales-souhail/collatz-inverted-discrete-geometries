@@ -7,10 +7,10 @@ The central product of this repository is **budgeted coverage**, not a proof of 
 1. On the cycle $4\to 2\to 1$ under $f$, each node has a unique successor: **choice entropy $0$**.
 2. The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) **grows** with depth; mean branching temperature $T_{\mathrm{eff}}=\log(N_{d+1}/N_d)$ is **positive** in the recorded run.
 3. The residual
-   $$
-   R(D)=1-\frac{N_{\mathrm{cov}}}{N_{\mathrm{win}}}
-   $$
-   with $N_{\mathrm{cov}}$ the number of covered states in the window and $N_{\mathrm{win}}$ the window size. At depth $D=28$ on $\{1,\ldots,8000\}$, $R\approx 0.91$ (partial coverage under budget). **$R=0$ at finite $D$ is not claimed.**
+ $$
+ R(D)=1-\frac{N_{\mathrm{cov}}}{N_{\mathrm{win}}}
+ $$
+ with $N_{\mathrm{cov}}$ the number of covered states in the window and $N_{\mathrm{win}}$ the window size. At depth $D=28$ on $\{1,\ldots,8000\}$, $R\approx 0.91$ (partial coverage under budget). **$R=0$ at finite $D$ is not claimed.**
 4. Under the same forward budget, $g$ covers a **slightly larger** fraction of that integer window than $f$.
 
 Full write-up and flags: [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md).

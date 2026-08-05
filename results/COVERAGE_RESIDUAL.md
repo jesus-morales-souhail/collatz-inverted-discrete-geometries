@@ -21,9 +21,7 @@ Generators: $n\mapsto 2n$, and $n\mapsto(n-1)/3$ when that value is a positive o
 | residual $R$ | $0.9085$ |
 | mean $T_{\mathrm{eff}}=\log(N_{d+1}/N_d)$ | $0.219$ |
 
-First layer sizes $N_d$: $1,1,1,1,1,2,2,4,4,6,6,8,\ldots$
-
-$R=0$ at finite $D$ is not claimed.
+First layer sizes $N_d$: $1,1,1,1,1,2,2,4,4,6,6,8,\ldotsR=0$ at finite $D$ is not claimed.
 
 ## Forward coverage (same budget)
 
