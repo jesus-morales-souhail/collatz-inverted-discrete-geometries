@@ -45,19 +45,9 @@ $g$ is **not** claimed to send every orbit to $+\infty$. Cycles exist (for examp
 
 ## Main observations
 
-### Exploration under $g$ versus $f$
+### Coverage residual (main result)
 
-On $\mathbb{Z}$, on $\mathbb{Z}/N\mathbb{Z}$, on a discrete hyperbolic tree (value + level), and on a product of path monitors, $g$ tends to explore more of the state space than $f$: less concentration on $1$ on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts.
-
-Table of checks: [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md).
-
-```bash
-python scripts/convergence_vs_exploration.py
-```
-
-### Coverage residual (not a proof)
-
-The product here is coverage under a budget, not a solution of the conjecture. The cycle $4\to 2\to 1$ has choice entropy $0$ under $f$ (one successor per node). The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) expands with depth; the residual
+The product is coverage under a budget, not a solution of the conjecture. The cycle $4\to 2\to 1$ has choice entropy $0$ under $f$ (one successor per node). The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) expands with depth; the residual
 
 $$
 R(D)=1-\frac{\#\{\text{covered states in the window}\}}{\#\{\text{window}\}}
@@ -65,11 +55,23 @@ $$
 
 is the observable. Forward orbits of $f$ and $g$ are compared under the same seed set and step count. Full coverage ($R=0$ at finite $D$) is not claimed.
 
+In the recorded run: mean $T_{\mathrm{eff}}>0$, inverse $R\approx 0.91$ on $\{1,\ldots,8000\}$ at depth $28$, and $g$ covers slightly more of that window than $f$ under the same forward budget. Core checks hold; see [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md).
+
 ```bash
 python scripts/coverage_residual.py
 ```
 
-Figures: `figures/coverage/`. Note: [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md).
+Figures: `figures/coverage/`.
+
+### Exploration under $g$ versus $f$
+
+On $\mathbb{Z}$, on $\mathbb{Z}/N\mathbb{Z}$, on a discrete hyperbolic tree (value + level), and on a product of path monitors, $g$ tends to explore more of the state space than $f$: less concentration on $1$ on the ring, larger growth proxies on non-compact components when the same number of steps is used. That is an empirical statement about the models implemented here, reproducible from the scripts. It supports the coverage view; it is secondary to $R(D)$.
+
+Table of checks: [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md).
+
+```bash
+python scripts/convergence_vs_exploration.py
+```
 
 ### Markov structure
 

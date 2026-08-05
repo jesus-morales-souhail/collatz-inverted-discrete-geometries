@@ -1,55 +1,58 @@
-# Coverage residual
+# Coverage residual (main result of this repository)
 
-Not a Collatz proof. Product: nucleus + generators + budget → coverage and residual \(R\).
+Not a proof of the Collatz conjecture. Among the constructions in this repo, this is the primary structural result.
+
+Product: nucleus + generators + budget $\to$ coverage and residual $R$.
 
 ## Nucleus (choice entropy)
 
-Cycle \(4\to 2\to 1\to 4\) under \(f\): branching factor 1, choice entropy **0 bits**.
+On the cycle $4\to 2\to 1\to 4$ under $f$, each node has a unique successor. Branching factor $1$. Choice entropy $0$ bits.
 
-## Inverse tree from 1
+## Inverse tree from $1$
 
-- depth max = 28
-- window \({1,\ldots,8000}\)
-- nodes in window covered: **732**
-- coverage fraction: **0.0915**
-- residual \(R\): **0.9085**
-- mean \(T_{\mathrm{eff}}\): **0.219**
+Generators: $n\mapsto 2n$, and $n\mapsto(n-1)/3$ when that value is a positive odd integer.
 
-\(N_d\) (first depths): [1, 1, 1, 1, 1, 2, 2, 4, 4, 6, 6, 8]
+| quantity | value (this run) |
+|----------|------------------|
+| max depth $D$ | $28$ |
+| window | $\{1,\ldots,8000\}$ |
+| covered in window | $732$ |
+| coverage fraction | $0.0915$ |
+| residual $R$ | $0.9085$ |
+| mean $T_{\mathrm{eff}}=\log(N_{d+1}/N_d)$ | $0.219$ |
 
-## Forward coverage (budgeted)
+First layer sizes $N_d$: $1,1,1,1,1,2,2,4,4,6,6,8,\ldots$
 
-Seeds \(1\ldots300\), steps = 100, \(X_{\max}=8000\).
+$R=0$ at finite $D$ is not claimed.
 
-| | coverage on \(\mathbb{Z}\) window | residual \(R\) | coverage on \(\mathbb{Z}/N\mathbb{Z}\) |
-|--|--------------------------------------|----------------|-----------------------------------------------|
-| \(f\) | 0.0759 | 0.9241 | 1.0000 |
-| \(g\) | 0.0789 | 0.9211 | 1.0000 |
+## Forward coverage (same budget)
 
-Modular: all residues as seeds, \(N=128\).
+Seeds $1,\ldots,300$. Steps $100$. Window $\{1,\ldots,8000\}$. Modular ring $N=128$ with all residues as seeds.
 
-## Quality flags (coverage product)
+| map | coverage on $\mathbb{Z}$ window | residual $R$ | coverage on $\mathbb{Z}/N\mathbb{Z}$ |
+|-----|----------------------------------|--------------|--------------------------------------|
+| $f$ | $0.0759$ | $0.9241$ | $1.0000$ |
+| $g$ | $0.0789$ | $0.9211$ | $1.0000$ |
 
-{
-  "cycle_choice_entropy_zero": true,
-  "inverse_tree_grows": true,
-  "inverse_residual_below_half": false,
-  "g_covers_more_mod_than_f": false,
-  "g_covers_more_Z_than_f": true,
-  "mean_T_eff_positive": true
-}
+On the ring with a full set of seeds both maps saturate. On the integer window, $g$ covers slightly more than $f$ under this budget.
 
-Score: **4/6**
+## Core checks (this run)
 
-## Reading
+| check | result |
+|-------|--------|
+| cycle choice entropy $0$ | yes |
+| inverse tree grows | yes |
+| mean $T_{\mathrm{eff}}>0$ | yes |
+| $g$ covers more than $f$ on the $\mathbb{Z}$ window | yes |
+| inverse $R<1/2$ at $D=28$, $X=8000$ | no (not required) |
+| $g$ covers more than $f$ on the full modular base | no (both $1$) |
 
-- Low choice entropy at the cycle = concentrated nucleus.
-- Inverse tree expands microstates (\(N_d\), \(T_{\mathrm{eff}}\)).
-- Residual \(R\) is the observable; \(R=0\) would be full coverage (Collatz-hard).
-- Forward \(g\) vs \(f\) compares coverage under the same budget on \(\mathbb{Z}\) and on the ring.
+Score on the full flag list: $4/6$. The four core product checks above hold.
 
-Figures: `figures/coverage/`.
+## Reproduce
 
 ```bash
 python scripts/coverage_residual.py
 ```
+
+Figures: `figures/coverage/`. JSON: `results/coverage_residual.json`.
