@@ -13,6 +13,7 @@ I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, sph
 | [`docs/CLAIMS.md`](docs/CLAIMS.md) | claim table |
 | [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion |
 | [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_VS_EXPLORATION.md) | attractor vs coverage on the monitors |
+| [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) | residual $R(D)$: inverse tree and budgeted forward coverage |
 
 ---
 
@@ -51,6 +52,22 @@ Table of checks: [`results/CONVERGENCE_VS_EXPLORATION.md`](results/CONVERGENCE_V
 ```bash
 python scripts/convergence_vs_exploration.py
 ```
+
+### Coverage residual (not a proof)
+
+The product here is coverage under a budget, not a solution of the conjecture. The cycle $4\to 2\to 1$ has choice entropy $0$ under $f$ (one successor per node). The inverse tree from $1$ (generators $n\mapsto 2n$ and, when legal, $n\mapsto(n-1)/3$) expands with depth; the residual
+
+$$
+R(D)=1-\frac{\#\{\text{covered states in the window}\}}{\#\{\text{window}\}}
+$$
+
+is the observable. Forward orbits of $f$ and $g$ are compared under the same seed set and step count. Full coverage ($R=0$ at finite $D$) is not claimed.
+
+```bash
+python scripts/coverage_residual.py
+```
+
+Figures: `figures/coverage/`. Note: [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md).
 
 ### Markov structure
 
@@ -157,6 +174,7 @@ python scripts/fourier_qft_crack.py
 python scripts/constitutive_planes.py
 python scripts/prng_statistical_quality.py
 python scripts/convergence_vs_exploration.py
+python scripts/coverage_residual.py
 ```
 
 ---

@@ -22,3 +22,8 @@
 | Fitted OU SDE, skew-product RDS, PDMP or MSM for these maps | Not claimed |
 | $f$ concentrates on 4-2-1 in tested ranges; $g$ visits 1 less on $\mathbb{Z}/N\mathbb{Z}$ | Empirical (see `CONVERGENCE_VS_EXPLORATION.md`) |
 | Short-horizon growth under $g$ implies permanent escape to $\infty$ | False (cycles; growth fraction falls with horizon) |
+| Cycle $4\to 2\to 1$ has choice entropy $0$ under $f$ | True (unique successor) |
+| Inverse tree from $1$ grows ($N_d$, mean $T_{\mathrm{eff}}>0$) under budgeted depth | Empirical (this repo) |
+| Residual $R(D)$ is the coverage observable; $R=0$ at finite $D$ is not claimed | Definition + empirical $R>0$ here |
+| Under the same forward budget, $g$ covers a larger fraction of a fixed window of $\mathbb{Z}$ than $f$ | Empirical (this repo) |
+| Coverage residual proves the Collatz conjecture | Not claimed |

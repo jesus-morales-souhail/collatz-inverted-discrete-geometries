@@ -11,10 +11,12 @@
 - The discrete Fourier/Ohm product on scalar fields defined on the cell line (constant $\kappa$).
 - Empirical statistical tests of bitstreams from $f$ and $g$ on lattice planes (self-contained battery).
 - Log-orbit drift / mean-reversion diagnostics on $Y_t=\log(1+|X_t|)$.
+- Coverage residual $R(D)$ under a fixed budget: inverse tree from $1$, and forward orbits of $f$ and $g$ (not a proof of the conjecture).
 
 ## Out of scope
 
 - A proof of the classical Collatz conjecture on all of $\mathbb{Z}^+$.
+- Claiming $R(D)=0$ for finite depth, or that inverse coverage settles the conjecture.
 - A claim that every inverted integer orbit diverges (counterexamples: finite cycles).
 - A canonical notion of parity on a smooth Riemannian manifold without discretisation.
 - Deriving arithmetic divergence from Euclid’s postulates alone.

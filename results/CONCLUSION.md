@@ -17,4 +17,6 @@ Bitstreams extracted from $f$ and $g$ on lattice planes (parity, LSBs, $\mathbb{
 
 Table of attractor vs coverage checks: [`CONVERGENCE_VS_EXPLORATION.md`](CONVERGENCE_VS_EXPLORATION.md).
 
-Related snapshots: `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `constitutive_planes.json`, `prng_statistical_quality.json`, `convergence_vs_exploration.json`, `summary_reproduced.json`.
+Coverage under budget (inverse tree from $1$, residual $R(D)$, forward $f$ vs $g$): [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md). Choice entropy on the $4$-$2$-$1$ cycle is zero; the inverse tree grows with positive mean branching temperature in the sample; full coverage at finite depth is not claimed.
+
+Related snapshots: `two_maps_euclidean_spherical.json`, `discrete_geometry_ca.json`, `fourier_qft_crack.json`, `constitutive_planes.json`, `prng_statistical_quality.json`, `convergence_vs_exploration.json`, `coverage_residual.json`, `summary_reproduced.json`.
