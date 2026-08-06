@@ -12,6 +12,7 @@
 - Empirical statistical tests of bitstreams from $f$ and $g$ on lattice planes (self-contained battery).
 - Log-orbit drift / mean-reversion diagnostics on $Y_t=\log(1+|X_t|)$.
 - Coverage residual $R(D)$ under a fixed budget: inverse tree from $1$, and forward orbits of $f$ and $g$ (not a proof of the conjecture).
+- Residual curve $R(d)$ and comparison of coverage on $\mathbb{Z}$ vs $\mathbb{Z}/N\mathbb{Z}$ (change of space; still not a proof).
 
 ## Out of scope
 

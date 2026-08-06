@@ -13,8 +13,9 @@ The central product of this repository is **budgeted coverage**, not a proof of 
  with $N_{\mathrm{cov}}$ the number of covered states in the window and $N_{\mathrm{win}}$ the window size. At depth $D=28$ on $\{1,\ldots,8000\}$, $R\approx 0.91$ (partial coverage under budget). **$R=0$ at finite $D$ is not claimed.**
 4. Under the same forward budget, $g$ covers a **slightly larger** fraction of that integer window than $f$.
 
-Full write-up and flags: [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md).
-Reproduce: `python scripts/coverage_residual.py`.
+Full write-up and flags: [`COVERAGE_RESIDUAL.md`](COVERAGE_RESIDUAL.md).  
+$R(d)$ vs depth and $\mathbb{Z}$ vs $\mathbb{Z}/N\mathbb{Z}$: [`COVERAGE_TWO_JUMPS.md`](COVERAGE_TWO_JUMPS.md).  
+Reproduce: `python scripts/coverage_residual.py` and `python scripts/coverage_two_jumps.py`.
 
 That is the strongest structural result here: a measurable coverage product (nucleus + generators + budget + residual) that works without solving the classical conjecture.
 

@@ -27,3 +27,6 @@
 | Residual $R(D)$ is the coverage observable; $R=0$ at finite $D$ is not claimed | Definition + empirical $R>0$ here |
 | Under the same forward budget, $g$ covers a larger fraction of a fixed window of $\mathbb{Z}$ than $f$ | Empirical (this repo) |
 | Coverage residual proves the Collatz conjecture | Not claimed |
+| $R(d)$ falls with depth on a fixed window (inverse tree) | Empirical (see `COVERAGE_TWO_JUMPS.md`) |
+| Modular coverage saturates under full residue seeds | Empirical on $\mathbb{Z}/N\mathbb{Z}$ here |
+| $\lim_{d\to\infty} R(d)=0$ on $\mathbb{Z}^+$ | Not claimed |

@@ -11,6 +11,7 @@ I keep two arithmetic maps and a few discrete spaces that imitate Euclidean, sph
 | | |
 |:--|:--|
 | [`results/COVERAGE_RESIDUAL.md`](results/COVERAGE_RESIDUAL.md) | **main result** — residual $R(D)$ |
+| [`results/COVERAGE_TWO_JUMPS.md`](results/COVERAGE_TWO_JUMPS.md) | $R(d)$ vs depth; $\mathbb{Z}$ vs ring |
 | [`results/CONCLUSION.md`](results/CONCLUSION.md) | short conclusion (leads with coverage) |
 | [`START_HERE.md`](START_HERE.md) | reading order |
 | [`BOUNDARY.md`](BOUNDARY.md) | limits of the claims |
@@ -59,9 +60,11 @@ In the recorded run: mean $T_{\mathrm{eff}}>0$, inverse $R\approx 0.91$ on $\{1,
 
 ```bash
 python scripts/coverage_residual.py
+python scripts/coverage_two_jumps.py
 ```
 
-Figures: `figures/coverage/`.
+Figures: `figures/coverage/`.  
+Level-up note ($R(d)$, change of space): [`results/COVERAGE_TWO_JUMPS.md`](results/COVERAGE_TWO_JUMPS.md).
 
 ### Exploration under $g$ versus $f$
 
@@ -179,6 +182,7 @@ python scripts/constitutive_planes.py
 python scripts/prng_statistical_quality.py
 python scripts/convergence_vs_exploration.py
 python scripts/coverage_residual.py
+python scripts/coverage_two_jumps.py
 ```
 
 ---

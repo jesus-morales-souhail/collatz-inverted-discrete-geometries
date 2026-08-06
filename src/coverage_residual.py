@@ -117,6 +117,33 @@ def inverse_coverage_up_to(
     }
 
 
+def residual_curve(
+    max_depth: int,
+    X_max: int,
+    root: int = 1,
+) -> dict:
+    """
+    One BFS to max_depth; residual R(d) and cumulative coverage for d=0..max_depth.
+    Path-1 object: how R falls with budget (not lim R = 0 as a theorem).
+    """
+    inv = inverse_coverage_up_to(max_depth=max_depth, X_max=X_max, root=root)
+    total = float(X_max)
+    cum = inv["covered_cumulative_in_1_X"]
+    R_of_d = [1.0 - c / total for c in cum]
+    return {
+        "root": root,
+        "max_depth": max_depth,
+        "X_max": X_max,
+        "depth": list(range(max_depth + 1)),
+        "N_d": inv["N_d"],
+        "covered_cum": cum,
+        "R_of_d": R_of_d,
+        "T_eff": inv["T_eff_log_branch"],
+        "R_final": inv["residual_R"],
+        "mean_T_eff": inv["mean_T_eff"],
+    }
+
+
 def forward_coverage(
     seeds: Iterable[int],
     steps: int,

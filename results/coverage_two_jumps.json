@@ -1,0 +1,57 @@
+{
+  "path1_residual_curve": {
+    "X_max": 8000,
+    "max_depth": 36,
+    "R_final": 0.821875,
+    "mean_T_eff": 0.2222877651736863,
+    "slope_log_N_d_mid": 0.23454079087708546,
+    "R_at_selected_D": {
+      "0": 0.999875,
+      "8": 0.997875,
+      "16": 0.98475,
+      "24": 0.944,
+      "28": 0.9085,
+      "32": 0.868375,
+      "36": 0.821875
+    },
+    "N_d_head": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      4,
+      4,
+      6,
+      6,
+      8,
+      10,
+      14,
+      18,
+      24
+    ]
+  },
+  "path2_change_of_space": {
+    "Z_window": {
+      "X_max": 8000,
+      "seeds": 300,
+      "steps": 100,
+      "coverage_f": 0.075875,
+      "coverage_g": 0.078875,
+      "R_f": 0.924125,
+      "R_g": 0.921125
+    },
+    "Z_mod_N": {
+      "N": 128,
+      "seeds": "all residues",
+      "steps": 100,
+      "coverage_f": 1.0,
+      "coverage_g": 1.0,
+      "R_f": 0.0,
+      "R_g": 0.0
+    }
+  },
+  "note": "R(D) at finite D is not lim R. Modular coverage is a different question (finite space). Neither path proves the Collatz conjecture."
+}
